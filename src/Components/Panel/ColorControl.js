@@ -1,0 +1,35 @@
+import { __ } from '@wordpress/i18n';
+import { Button, ColorPicker, Dropdown, PanelRow } from '@wordpress/components';
+import { useSelect } from '@wordpress/data';
+import Label from '../../../../bpl-tools/Components/Label/Label';
+import '../../../../bpl-tools/Components/ColorControl/ColorControl.scss';
+
+// Same UI as bpl-tools ColorControl, imported directly so the bpl-tools index (and its code editor) stays out of the bundle.
+const ColorControl = ({ className = '', label, value = '', onChange }) => {
+	const themeColors = useSelect(select => select('core/block-editor').getSettings().colors || [], []);
+
+	return <PanelRow className={className}>
+		<Label className=''>{label}</Label>
+
+		<Dropdown className='bPlDropdownContainer bPlColor' contentClassName='bPlDropdownPopover' popoverProps={{ placement: 'top-end' }}
+			renderToggle={({ isOpen, onToggle }) => <>
+				<div className='bPlColorButtonContainer'>
+					<button type='button' className='bPlColorButton' onClick={onToggle} aria-expanded={isOpen} aria-label={label} style={{ backgroundColor: value || 'transparent' }} />
+				</div>
+
+				{value && <Button className='bPlResetVal' icon='image-rotate' label={__('Clear', 'softicon-related-posts')} onClick={() => onChange(undefined)} />}
+			</>}
+			renderContent={({ onClose }) => <>
+				<ColorPicker color={value || ''} onChangeComplete={c => onChange(`rgba(${c.rgb.r}, ${c.rgb.g}, ${c.rgb.b}, ${c.rgb.a})`)} />
+
+				{themeColors.length ? <div className='bPlThemeColors'>
+					{themeColors.map(({ color }) => <div key={color} className='bPlColorButtonContainer'>
+						<button type='button' className='bPlColorButton' aria-label={color} style={{ backgroundColor: color }} onClick={() => { onChange(color); onClose(); }} />
+					</div>)}
+				</div> : null}
+			</>}
+		/>
+	</PanelRow>;
+};
+
+export default ColorControl;

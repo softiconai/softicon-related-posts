@@ -1,0 +1,12 @@
+.wordpress-org
+.distignore
+.DS_Store
+.git
+.gitignore
+marketing
+README.md
+node_modules
+package-lock.json
+.eslintrc.js
+webpack.config.js
+softicon-related-posts.zip

@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "softicon/related-posts",
+	"version": "1.6.0",
+	"title": "Related Posts",
+	"category": "widgets",
+	"description": "Show posts that share a category or tag with the current post.",
+	"keywords": [ "related", "similar", "posts" ],
+	"textdomain": "softicon-related-posts",
+	"usesContext": [ "postId" ],
+	"attributes": {
+		"posts": { "type": "number" },
+		"columns": { "type": "number" },
+		"relation": { "type": "string" },
+		"orderby": { "type": "string" },
+		"title": { "type": "string" },
+		"showCategories": { "type": "boolean" },
+		"showImage": { "type": "boolean" },
+		"showExcerpt": { "type": "boolean" },
+		"showDate": { "type": "boolean" },
+		"showAuthor": { "type": "boolean" },
+		"showReadMore": { "type": "boolean" },
+		"layout": { "type": "string" },
+		"imageRatio": { "type": "string" },
+		"cardStyle": { "type": "string" },
+		"radius": { "type": "number" },
+		"hoverZoom": { "type": "boolean" },
+		"titleColor": { "type": "string" },
+		"textColor": { "type": "string" },
+		"cardBg": { "type": "string" }
+	},
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ]
+	},
+	"example": { "attributes": {} },
+	"editorScript": "file:./index.js",
+	"editorStyle": [ "file:./index.css", "file:./style-index.css" ],
+	"style": "alrp_main",
+	"render": "file:./render.php"
+}

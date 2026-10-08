@@ -1,0 +1,22 @@
+# Dependencies, restored by `npm install`
+node_modules/
+
+# Build output, rebuilt from src/ by `npm run build`
+build/
+*.map
+
+# Release zip from `npm run zip`
+*.zip
+
+# Generated translations, rebuilt by `npm run i18n` (the .pot stays tracked)
+languages/*.mo
+languages/*.json
+languages/*-en_US.po
+
+# Promo videos and the YouTube upload sheet, too large for the repo
+marketing/
+
+# OS and editor files
+.DS_Store
+.vscode/
+.idea/
