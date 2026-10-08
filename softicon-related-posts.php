@@ -1,7 +1,7 @@
 <?php
 /*
 * 
-* Plugin Name: SoftIcon Related Posts
+* Plugin Name: SoftIcon Related Posts – Similar Posts & Internal Linking
 * Description: Displays related posts based on categories or tags to enhance engagement and navigation.
 * Version: 1.6.0
 * Requires at least: 6.3

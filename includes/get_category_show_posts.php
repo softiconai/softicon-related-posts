@@ -187,18 +187,18 @@ class get_category_show_posts {
         $args = array(
             'post_type'           => $post_type,
             'posts_per_page'      => $pool,
-            'tax_query'           => $tax_query,
+            'tax_query'           => $tax_query, // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query -- matching shared terms is the core of related posts, IDs are cached
             'orderby'             => in_array( $orderby, array('rand', 'relevance'), true ) ? 'date' : $orderby,
             'order'               => 'title' === $orderby ? 'ASC' : 'DESC',
             'post_status'         => 'publish',
-            'exclude'             => array_merge( array( $post_id ), $manual, $settings['exclude_posts'] ),
+            'exclude'             => array_merge( array( $post_id ), $manual, $settings['exclude_posts'] ), // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude -- small list: the current post, hand-picked and excluded IDs
             'ignore_sticky_posts' => true,
             'no_found_rows'       => true,
         );
 
         // category__not_in would join the OR group above and match everything, so AND it explicitly
         if ( $settings['exclude_categories'] ) {
-            $args['tax_query'] = array(
+            $args['tax_query'] = array( // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query -- same query, plus the excluded categories
                 'relation' => 'AND',
                 $tax_query,
                 array(
