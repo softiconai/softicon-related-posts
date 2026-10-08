@@ -18,8 +18,8 @@
 		"plugin-zip": "wp-scripts plugin-zip",
 		"find-ds": "find . -name '.DS_Store' -not -path './node_modules/*' -delete",
 		"prezip": "[ -d node_modules ] || npm ci --no-audit --no-fund",
-		"zip": "npm run build && npm run i18n && npm run find-ds && rm -f softicon-related-posts.zip && cd .. && zip -r softicon-related-posts/softicon-related-posts.zip softicon-related-posts/softicon-related-posts.php softicon-related-posts/index.php softicon-related-posts/uninstall.php softicon-related-posts/includes softicon-related-posts/templates softicon-related-posts/assets softicon-related-posts/build softicon-related-posts/languages softicon-related-posts/readme.txt -x '*/.DS_Store' '*.map'",
-		"postzip": "echo \"\\n\u2714 $(pwd)/softicon-related-posts.zip ($(unzip -l softicon-related-posts.zip | tail -1 | awk '{print $2}') files)\"",
+		"zip": "rm -f softicon-related-posts.zip && printf '\u2192 Building block\\n' && (npm run -s build >/dev/null 2>&1 || npm run build) && printf '\u2192 Translations\\n' && (npm run -s i18n >/dev/null 2>&1 || npm run i18n) && npm run -s find-ds && printf '\u2192 Zipping\\n' && cd .. && zip -rq softicon-related-posts/softicon-related-posts.zip softicon-related-posts/softicon-related-posts.php softicon-related-posts/index.php softicon-related-posts/uninstall.php softicon-related-posts/includes softicon-related-posts/templates softicon-related-posts/assets softicon-related-posts/build softicon-related-posts/languages softicon-related-posts/readme.txt -x '*/.DS_Store' '*.map'",
+		"postzip": "printf '\\n\u2714 Zip ready: %s\\n  %s files, %s\\n\\n' \"$PWD/softicon-related-posts.zip\" \"$(unzip -l softicon-related-posts.zip | tail -1 | awk '{print $2}')\" \"$(du -h softicon-related-posts.zip | cut -f1 | tr -d ' ')\"",
 		"bundle": "npm run lint && npm run zip"
 	},
 	"devDependencies": {
