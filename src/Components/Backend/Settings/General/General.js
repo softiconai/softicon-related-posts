@@ -37,7 +37,7 @@ const General = ({ attributes, setAttributes }) => {
 		</PanelBody>
 
 		<PanelBody className='bPlPanelBody' title={__('Defaults', 'softicon-related-posts')} initialOpen={false}>
-			<p>{__('Options you have not changed here follow Settings → Related Posts.', 'softicon-related-posts')}</p>
+			<p>{__('Options you have not changed here follow Related Posts → Settings.', 'softicon-related-posts')}</p>
 
 			<Button className='alrpResetBtn' variant='secondary' onClick={resetAll}>{__('Reset to settings page values', 'softicon-related-posts')}</Button>
 		</PanelBody>

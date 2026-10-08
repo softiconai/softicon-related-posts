@@ -78,7 +78,7 @@ It works the moment you activate it: related posts appear below every post with 
 
 1. Install and activate the plugin.
 2. Related posts appear below every post right away.
-3. Open **Settings → Related Posts** to choose how posts are matched, ordered and displayed.
+3. Open **Related Posts → Settings** to choose how posts are matched, ordered and displayed.
 4. Optional: add the Related Posts block anywhere, or hand-pick related posts in the post editor.
 
 = Shortcode =
@@ -111,7 +111,7 @@ Missing a feature? Found a bug? Please open a topic in the support forum or [ema
 1. Go to **Plugins → Add New Plugin**.
 2. Search for **SoftIcon Related Posts**.
 3. Click **Install Now**, then **Activate**.
-4. Related posts now appear below your posts. Go to **Settings → Related Posts** to customize them.
+4. Related posts now appear below your posts. Go to **Related Posts → Settings** to customize them.
 
 = Manual installation =
 
@@ -127,7 +127,7 @@ Install and activate SoftIcon Related Posts. Related posts appear below every po
 
 = How do I show related posts by tags instead of categories? =
 
-Go to Settings → Related Posts and set "Related by" to "Same tag", or to "Same category or tag" to use both.
+Go to Related Posts → Settings and set "Related by" to "Same tag", or to "Same category or tag" to use both.
 
 = How does "Most relevant" work? =
 
@@ -139,7 +139,7 @@ No. Related posts are cached and refreshed automatically when your content chang
 
 = Does it work with WooCommerce? =
 
-Yes. Tick "Products" under Settings → Related Posts → Post types and set "Related by" to "Any shared taxonomy". Related products are matched by product categories and tags and shown inside the product description.
+Yes. Tick "Products" under Related Posts → Settings → Post types and set "Related by" to "Any shared taxonomy". Related products are matched by product categories and tags and shown inside the product description.
 
 = Does it work with block themes and Full Site Editing? =
 
@@ -155,7 +155,7 @@ Yes. In the post editor, use "Pick related posts" in the Related Posts box. Your
 
 = Can I exclude categories or posts? =
 
-Yes. Under Settings → Related Posts → Filters you can exclude categories, exclude individual posts by ID and only show posts from the last few months.
+Yes. Under Related Posts → Settings → Filters you can exclude categories, exclude individual posts by ID and only show posts from the last few months.
 
 = How do I hide related posts on one post? =
 
@@ -175,7 +175,7 @@ They are added to the full text of feed items. Check that Settings → Reading �
 
 = Can I change the design or the HTML? =
 
-Use the Design options in Settings → Related Posts or in the block sidebar. For full control, copy the templates into your theme (see "For developers").
+Use the Design options in Related Posts → Settings or in the block sidebar. For full control, copy the templates into your theme (see "For developers").
 
 = Does it collect any data? =
 
@@ -206,7 +206,7 @@ Yes. All text can be translated, and a translation template is included in the `
 * Security: Excerpts now go through WordPress' excerpt filters, so membership plugins can restrict them
 * Improved: Saving drafts no longer clears the related posts cache
 * Improved: Search results in "Pick related posts" close after you pick a post
-* New: Video tutorials section on the settings page
+* New: Related Posts menu in the admin sidebar with Settings and a Help & Videos page (old Settings → Related Posts links redirect)
 * Improved: Related Posts block rebuilt with General and Style tabs, plus title, text and card background colors
 
 = 1.5.0 =
@@ -255,7 +255,7 @@ Yes. All text can be translated, and a translation template is included in the `
 Adds pages and custom post types, a sidebar widget and RSS feed links.
 
 = 1.5.0 =
-New layouts and design options. Text colors now follow your theme; set Title/Text color in Settings → Related Posts to keep them black.
+New layouts and design options. Text colors now follow your theme; set Title/Text color in Related Posts → Settings to keep them black.
 
 = 1.4.0 =
 Adds "Most relevant" ordering, hand-picked related posts, exclusions and a post age limit.

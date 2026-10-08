@@ -31,7 +31,7 @@ Show readers what to read next. SoftIcon Related Posts finds posts that share ca
 [softicon_related_posts posts="4" columns="2" relation="tag" orderby="relevance" layout="list"]
 ```
 
-Every attribute is optional and falls back to Settings → Related Posts. The full list is in [readme.txt](readme.txt).
+Every attribute is optional and falls back to Related Posts → Settings. The full list is in [readme.txt](readme.txt).
 
 ## Developer hooks
 

@@ -5,11 +5,15 @@ if ( !defined('ABSPATH') ) { exit;}
 class admin_settings {
 
     const OPTION = 'alrp_settings';
+    const PAGE   = 'alrp-settings';
+
+    private $settings_hook = '';
 
     public function __construct()
     {
         add_action('admin_menu', array( $this, 'add_menu' ));
         add_action('admin_init', array( $this, 'register_settings' ));
+        add_action('admin_init', array( $this, 'redirect_old_url' ));
         add_filter('plugin_action_links_' . ALRP_PLUGIN_BASENAME, array( $this, 'action_links' ));
         add_action('admin_enqueue_scripts', array( $this, 'enqueue_assets' ));
     }
@@ -111,18 +115,40 @@ class admin_settings {
         return self::get()['post_types'];
     }
 
+    public static function url($page = self::PAGE) {
+        return admin_url( 'admin.php?page=' . $page );
+    }
+
     public function add_menu() {
-        add_options_page(
+        $icon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#a7aaad" d="M3 4h8v7H3V4Zm10 0h8v7h-8V4ZM3 13h8v7H3v-7Zm10 2h8v1.5h-8V15Zm0 3h5v1.5h-5V18Z"/></svg>';
+
+        add_menu_page(
             __('Related Posts', 'softicon-related-posts'),
             __('Related Posts', 'softicon-related-posts'),
             'manage_options',
-            'alrp-settings',
-            array( $this, 'render_page' )
+            self::PAGE,
+            array( $this, 'render_page' ),
+            'data:image/svg+xml;base64,' . base64_encode( $icon ), // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode -- menu icon data URI
+            26
         );
+
+        // same slug as the parent, so the first submenu item reads "Settings" instead of repeating the menu title
+        $this->settings_hook = add_submenu_page( self::PAGE, __('Related Posts Settings', 'softicon-related-posts'), __('Settings', 'softicon-related-posts'), 'manage_options', self::PAGE, array( $this, 'render_page' ) );
+
+        add_submenu_page( self::PAGE, __('Help & Videos', 'softicon-related-posts'), __('Help & Videos', 'softicon-related-posts'), 'manage_options', help_page::PAGE, array( 'ALRP_Related_Posts\help_page', 'render' ) );
+    }
+
+    // settings lived under Settings → Related Posts before 1.6.0, keep old bookmarks working
+    public function redirect_old_url() {
+        global $pagenow;
+        if ( 'options-general.php' === $pagenow && isset( $_GET['page'] ) && self::PAGE === sanitize_key( wp_unslash( $_GET['page'] ) ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only redirect
+            wp_safe_redirect( self::url() );
+            exit;
+        }
     }
 
     public function action_links($links) {
-        $url = admin_url('options-general.php?page=alrp-settings');
+        $url = self::url();
         array_unshift($links, '<a href="' . esc_url($url) . '">' . esc_html__('Settings', 'softicon-related-posts') . '</a>');
         return $links;
     }
@@ -336,7 +362,7 @@ class admin_settings {
     }
 
     public function enqueue_assets($hook) {
-        if ( 'settings_page_alrp-settings' !== $hook ) {
+        if ( $hook !== $this->settings_hook ) {
             return;
         }
         wp_enqueue_media();
@@ -346,7 +372,7 @@ class admin_settings {
             'title'  => __('Select fallback image', 'softicon-related-posts'),
             'button' => __('Use this image', 'softicon-related-posts'),
         ));
-        wp_add_inline_style('wp-admin', '.alrp-media-preview img{display:block;max-width:150px;height:auto;margin-bottom:8px}' . videos::styles());
+        wp_add_inline_style('wp-admin', '.alrp-media-preview img{display:block;max-width:150px;height:auto;margin-bottom:8px}');
     }
 
     // hex from the settings page, rgb()/rgba() from the block's color picker
@@ -368,7 +394,11 @@ class admin_settings {
         ?>
         <div class="wrap">
             <h1><?php esc_html_e('SoftIcon Related Posts', 'softicon-related-posts'); ?></h1>
-            <?php videos::render(); ?>
+            <?php settings_errors(); // top-level pages don't get the notice that options-general.php prints ?>
+            <p>
+                <?php esc_html_e('New here? Watch the short videos and see the shortcode and block options.', 'softicon-related-posts'); ?>
+                <a href="<?php echo esc_url( self::url( help_page::PAGE ) ); ?>"><?php esc_html_e('Help & Videos', 'softicon-related-posts'); ?></a>
+            </p>
             <form method="post" action="options.php">
                 <?php
                 settings_fields('alrp_settings_group');
@@ -376,10 +406,6 @@ class admin_settings {
                 submit_button();
                 ?>
             </form>
-            <h2><?php esc_html_e('Shortcode', 'softicon-related-posts'); ?></h2>
-            <p><?php esc_html_e('Place related posts anywhere with the shortcode below. Every attribute is optional and falls back to the settings above.', 'softicon-related-posts'); ?></p>
-            <p><code>[softicon_related_posts]</code></p>
-            <p><code>[softicon_related_posts posts="4" columns="2" relation="tag" orderby="date" title="You may also like" show_image="1" show_excerpt="0" show_date="1" show_author="0" show_categories="0"]</code></p>
         </div>
         <?php
     }

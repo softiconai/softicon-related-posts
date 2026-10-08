@@ -57,6 +57,7 @@ class ALRP_Related_posts{
         require_once ALRP_PLUGIN_PATH . 'includes/block.php';
         require_once ALRP_PLUGIN_PATH . 'includes/widget.php';
         require_once ALRP_PLUGIN_PATH . 'includes/videos.php';
+        require_once ALRP_PLUGIN_PATH . 'includes/help_page.php';
 
         new ALRP_Related_Posts\cache();
         new ALRP_Related_Posts\admin_settings();
@@ -64,6 +65,7 @@ class ALRP_Related_posts{
         new ALRP_Related_Posts\get_category_show_posts();
         new ALRP_Related_Posts\block();
         new ALRP_Related_Posts\videos();
+        new ALRP_Related_Posts\help_page();
         add_action( 'widgets_init', array( 'ALRP_Related_Posts\widget', 'register' ) );
 
     }

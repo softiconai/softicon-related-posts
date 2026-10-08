@@ -43,7 +43,7 @@ class videos {
 
     public function row_meta($links, $file) {
         if ( ALRP_PLUGIN_BASENAME === $file && self::all() ) {
-            $links[] = '<a href="' . esc_url( admin_url('options-general.php?page=alrp-settings#alrp-videos') ) . '">' . esc_html__('Video tutorials', 'softicon-related-posts') . '</a>';
+            $links[] = '<a href="' . esc_url( admin_settings::url( help_page::PAGE ) . '#alrp-videos' ) . '">' . esc_html__('Video tutorials', 'softicon-related-posts') . '</a>';
         }
         return $links;
     }
