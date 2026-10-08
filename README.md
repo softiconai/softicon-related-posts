@@ -4,7 +4,7 @@
 
 Show readers what to read next. SoftIcon Related Posts finds posts that share categories, tags or any custom taxonomy with the current post, ranks them by relevance and shows them in a grid, list or minimal layout.
 
-[WordPress.org](https://wordpress.org/plugins/softicon-related-posts/) · Requires WordPress 6.3+ · PHP 7.1+ · GPLv3
+[WordPress.org](https://wordpress.org/plugins/softicon-related-posts/) · [Report an issue](https://github.com/softiconai/softicon-related-posts/issues) · Requires WordPress 6.3+ · PHP 7.1+ · GPLv3
 
 ## Features
 

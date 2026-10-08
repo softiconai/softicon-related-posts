@@ -89,6 +89,8 @@ Supported attributes: post_id, posts, columns, relation (category, tag, both, al
 
 = For developers =
 
+The block's editor script is built from source. The full source code, including `src/` and the build setup, is on GitHub: [github.com/softiconai/softicon-related-posts](https://github.com/softiconai/softicon-related-posts). Pull requests are welcome.
+
 Copy `templates/posts.php` or `templates/category.php` into `yourtheme/softicon-related-posts/` to change the markup.
 
 * `alrp_related_posts_query_args` – filter the related posts query
