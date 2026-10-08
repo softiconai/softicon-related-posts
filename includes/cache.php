@@ -10,7 +10,7 @@ class cache {
     {
         // any change that can alter a related list bumps the version, old entries simply expire
         add_action('transition_post_status', array( $this, 'on_status' ), 10, 3);
-        add_action('deleted_post', array( __CLASS__, 'flush' ));
+        add_action('deleted_post', array( $this, 'on_delete' ), 10, 2);
         add_action('set_object_terms', array( $this, 'on_terms_change' ), 10, 6);
         add_action('edited_term', array( $this, 'on_term_edit' ), 10, 3);
         add_action('delete_term', array( $this, 'on_term_edit' ), 10, 3);
@@ -27,11 +27,23 @@ class cache {
         }
     }
 
-    public function on_terms_change($object_id, $terms, $tt_ids, $taxonomy) {
-        $tax = get_taxonomy( $taxonomy );
-        if ( $tax && $tax->public ) {
+    // trashing already flushed in on_status, revisions and drafts never appear in related lists
+    public function on_delete($post_id, $post) {
+        if ( $post && 'publish' === $post->post_status && is_post_type_viewable( $post->post_type ) ) {
             self::flush();
         }
+    }
+
+    public function on_terms_change($object_id, $terms, $tt_ids, $taxonomy) {
+        $tax = get_taxonomy( $taxonomy );
+        if ( ! $tax || ! $tax->public ) {
+            return;
+        }
+        // term edits pass 0; drafts, autosaves and revisions can't change a related list
+        if ( $object_id && 'publish' !== get_post_status( $object_id ) ) {
+            return;
+        }
+        self::flush();
     }
 
     public function on_term_edit($term_id, $tt_id, $taxonomy) {

@@ -75,6 +75,10 @@ class post_meta_box {
         if ( ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) || ! current_user_can('edit_post', $post_id) ) {
             return;
         }
+        // since WP 6.4 the revision is saved after the post with the same $_POST, which would wipe the picks
+        if ( wp_is_post_revision( $post_id ) || wp_is_post_autosave( $post_id ) ) {
+            return;
+        }
 
         if ( ! empty( $_POST['alrp_hide'] ) ) {
             update_post_meta( $post_id, self::META_KEY, 1 );
