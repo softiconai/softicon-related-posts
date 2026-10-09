@@ -22,7 +22,7 @@ It works the moment you activate it: related posts appear below every post with 
 
 https://www.youtube.com/watch?v=3ODxUKYQb3s
 
-More tutorials: [setup](https://www.youtube.com/watch?v=IJxf5xBIr48&list=PLAh6o0IpwSF0), [the block](https://www.youtube.com/watch?v=_0auk_TwemQ&list=PLAh6o0IpwSF0), [layouts and design](https://www.youtube.com/watch?v=WoDOvQ1i6Eg&list=PLAh6o0IpwSF0), [smart matching](https://www.youtube.com/watch?v=LyrI5lycqp0&list=PLAh6o0IpwSF0), [pages and WooCommerce](https://www.youtube.com/watch?v=9M8uoJ5U8rI&list=PLAh6o0IpwSF0) and [every setting explained](https://www.youtube.com/watch?v=CMvccEjL4Yg&list=PLAh6o0IpwSF0). Or watch the [whole playlist](https://www.youtube.com/playlist?list=PLAh6o0IpwSF0).
+More tutorials: [setup](https://www.youtube.com/watch?v=O_y0m1p-JPs&list=PLAh6o0IpwSF0), [the block](https://www.youtube.com/watch?v=_0auk_TwemQ&list=PLAh6o0IpwSF0), [layouts and design](https://www.youtube.com/watch?v=WoDOvQ1i6Eg&list=PLAh6o0IpwSF0), [smart matching](https://www.youtube.com/watch?v=LyrI5lycqp0&list=PLAh6o0IpwSF0), [pages and WooCommerce](https://www.youtube.com/watch?v=9M8uoJ5U8rI&list=PLAh6o0IpwSF0) and [every setting explained](https://www.youtube.com/watch?v=CMvccEjL4Yg&list=PLAh6o0IpwSF0). Or watch the [whole playlist](https://www.youtube.com/playlist?list=PLAh6o0IpwSF0).
 
 = Why choose SoftIcon Related Posts? =
 

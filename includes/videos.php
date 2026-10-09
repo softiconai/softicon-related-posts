@@ -9,7 +9,7 @@ class videos {
 
     const URLS = array(
         'overview'   => 'https://www.youtube.com/watch?v=3ODxUKYQb3s&list=PLAh6o0IpwSF0',
-        'setup'      => 'https://www.youtube.com/watch?v=IJxf5xBIr48&list=PLAh6o0IpwSF0',
+        'setup'      => 'https://www.youtube.com/watch?v=O_y0m1p-JPs&list=PLAh6o0IpwSF0',
         'block'      => 'https://www.youtube.com/watch?v=_0auk_TwemQ&list=PLAh6o0IpwSF0',
         'design'     => 'https://www.youtube.com/watch?v=WoDOvQ1i6Eg&list=PLAh6o0IpwSF0',
         'smart'      => 'https://www.youtube.com/watch?v=LyrI5lycqp0&list=PLAh6o0IpwSF0',
