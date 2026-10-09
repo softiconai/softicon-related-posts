@@ -109,9 +109,10 @@ Copy `templates/posts.php` or `templates/category.php` into `yourtheme/softicon-
 * `alrp_wrapper_classes` / `alrp_wrapper_style_vars` – add classes or CSS variables to the wrapper
 * `alrp_default_settings`, `alrp_setting_choices`, `alrp_sanitize_settings` – add your own settings
 * `alrp_block_atts` – map extra block attributes to settings
+* `alrp_render_settings` – adjust the settings a single list is rendered with
 * `alrp_video_urls` – tutorial video URLs shown on the settings page
 
-Settings page (JavaScript, `@wordpress/hooks`): `alrp.settings.tabs` adds tabs, `alrp.block.inspector` adds panels to the block sidebar.
+Settings page (JavaScript, `@wordpress/hooks`): `alrp.settings.tabs` adds tabs, `alrp.settings.layouts` and `alrp.settings.layoutArt` add layout tiles, `alrp.block.inspector` adds panels to the block sidebar.
 
 = Feedback =
 

@@ -304,6 +304,9 @@ class get_category_show_posts {
         $this->rendering = true;
         wp_enqueue_style('alrp_main');
 
+        // add-on layouts can switch parts of the card on or off
+        $settings = apply_filters( 'alrp_render_settings', $settings, $post_id );
+
         // minimal is a plain title list
         if ( 'minimal' === $settings['layout'] ) {
             $settings = array_merge( $settings, array( 'show_image' => 0, 'show_excerpt' => 0, 'show_author' => 0, 'show_read_more' => 0 ) );
