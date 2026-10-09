@@ -82,5 +82,6 @@ class ALRP_Related_posts{
     }
 }
 ALRP_Related_posts::get_instance();
+register_activation_hook( __FILE__, array( 'ALRP_Related_Posts\\admin_settings', 'on_activate' ) );
  
 

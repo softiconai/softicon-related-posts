@@ -4,8 +4,9 @@ if ( !defined('ABSPATH') ) { exit;}
 
 class admin_settings {
 
-    const OPTION = 'alrp_settings';
-    const PAGE   = 'alrp-settings';
+    const OPTION   = 'alrp_settings';
+    const PAGE     = 'alrp-settings';
+    const REDIRECT = 'alrp_activation_redirect';
 
     private $settings_hook = '';
 
@@ -13,6 +14,7 @@ class admin_settings {
     {
         add_action('admin_menu', array( $this, 'add_menu' ));
         add_action('admin_init', array( $this, 'redirect_old_url' ));
+        add_action('admin_init', array( $this, 'redirect_after_activation' ));
         add_filter('plugin_action_links_' . ALRP_PLUGIN_BASENAME, array( $this, 'action_links' ));
         add_action('admin_enqueue_scripts', array( $this, 'enqueue_assets' ));
     }
@@ -144,6 +146,28 @@ class admin_settings {
             wp_safe_redirect( self::url() );
             exit;
         }
+    }
+
+    // flag set on activation, read on the next admin page load
+    public static function on_activate() {
+        if ( ! ( defined('WP_CLI') && WP_CLI ) ) {
+            set_transient( self::REDIRECT, 1, 30 );
+        }
+    }
+
+    public function redirect_after_activation() {
+        if ( ! get_transient( self::REDIRECT ) ) {
+            return;
+        }
+        delete_transient( self::REDIRECT );
+
+        // bulk activation, network admin, AJAX and REST requests stay where they are
+        if ( isset( $_GET['activate-multi'] ) || is_network_admin() || wp_doing_ajax() || ( defined('REST_REQUEST') && REST_REQUEST ) || ! current_user_can('manage_options') ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- only checks for bulk activation
+            return;
+        }
+
+        wp_safe_redirect( self::url() );
+        exit;
     }
 
     public function action_links($links) {
