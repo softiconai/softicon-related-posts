@@ -1,5 +1,6 @@
 import { InspectorControls } from '@wordpress/block-editor';
 import { TabPanel } from '@wordpress/components';
+import { applyFilters } from '@wordpress/hooks';
 import General from './General/General';
 import Style from './Style/Style';
 import { tabs } from '../../../utils/options';
@@ -11,6 +12,9 @@ const Settings = ({ attributes, setAttributes }) => {
 				{'general' === tab.name && <General {...{ attributes, setAttributes }} />}
 
 				{'style' === tab.name && <Style {...{ attributes, setAttributes }} />}
+
+				{/* Add-ons append their own panels to either tab. */}
+				{applyFilters('alrp.block.inspector', null, { tab: tab.name, attributes, setAttributes })}
 			</>}
 		</TabPanel>
 	</InspectorControls>;

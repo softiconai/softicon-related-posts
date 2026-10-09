@@ -34,6 +34,9 @@ foreach ( $alrp_map as $alrp_attr => $alrp_key ) {
     }
 }
 
+// add-ons map the block attributes they added
+$alrp_atts = apply_filters( 'alrp_block_atts', $alrp_atts, $attributes, $block );
+
 $alrp_html = ALRP_Related_Posts\get_category_show_posts::instance()->render_atts( $alrp_atts );
 
 if ( $alrp_html ) {

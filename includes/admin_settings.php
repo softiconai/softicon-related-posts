@@ -5,8 +5,7 @@ if ( !defined('ABSPATH') ) { exit;}
 class admin_settings {
 
     const OPTION   = 'alrp_settings';
-    const PAGE     = 'alrp-settings';
-    const REDIRECT = 'alrp_activation_redirect';
+    const PAGE   = 'alrp-settings';
 
     private $settings_hook = '';
 
@@ -14,13 +13,13 @@ class admin_settings {
     {
         add_action('admin_menu', array( $this, 'add_menu' ));
         add_action('admin_init', array( $this, 'redirect_old_url' ));
-        add_action('admin_init', array( $this, 'redirect_after_activation' ));
         add_filter('plugin_action_links_' . ALRP_PLUGIN_BASENAME, array( $this, 'action_links' ));
         add_action('admin_enqueue_scripts', array( $this, 'enqueue_assets' ));
     }
 
+    // add-ons add their own keys through the alrp_default_settings filter
     public static function defaults() {
-        return array(
+        return apply_filters( 'alrp_default_settings', array(
             'enable'          => 1,
             'post_types'      => array('post'),
             'show_in_feed'    => 0,
@@ -52,16 +51,27 @@ class admin_settings {
             'title_color'        => '',
             'text_color'         => '',
             'card_bg'            => '',
-        );
+        ) );
     }
 
     public static function get() {
-        $saved = get_option(self::OPTION, array());
-        return wp_parse_args( is_array($saved) ? $saved : array(), self::defaults() );
+        $saved    = get_option(self::OPTION, array());
+        $settings = wp_parse_args( is_array($saved) ? $saved : array(), self::defaults() );
+
+        // a value saved by an add-on that is no longer active (e.g. a Pro layout) falls back to the default
+        $defaults = self::defaults();
+        foreach ( self::choices() as $key => $options ) {
+            if ( ! isset( $options[ $settings[ $key ] ] ) ) {
+                $settings[ $key ] = $defaults[ $key ];
+            }
+        }
+
+        return $settings;
     }
 
+    // add-ons can add options, e.g. a carousel layout, through the alrp_setting_choices filter
     public static function choices() {
-        return array(
+        return apply_filters( 'alrp_setting_choices', array(
             'position' => array(
                 'after'  => __('After content', 'softicon-related-posts'),
                 'before' => __('Before content', 'softicon-related-posts'),
@@ -98,7 +108,7 @@ class admin_settings {
                 'comment_count' => __('Most commented', 'softicon-related-posts'),
                 'title'         => __('Title (A-Z)', 'softicon-related-posts'),
             ),
-        );
+        ) );
     }
 
     // public post types the related posts can be shown on
@@ -146,28 +156,6 @@ class admin_settings {
             wp_safe_redirect( self::url() );
             exit;
         }
-    }
-
-    // flag set on activation, read on the next admin page load
-    public static function on_activate() {
-        if ( ! ( defined('WP_CLI') && WP_CLI ) ) {
-            set_transient( self::REDIRECT, 1, 30 );
-        }
-    }
-
-    public function redirect_after_activation() {
-        if ( ! get_transient( self::REDIRECT ) ) {
-            return;
-        }
-        delete_transient( self::REDIRECT );
-
-        // bulk activation, network admin, AJAX and REST requests stay where they are
-        if ( isset( $_GET['activate-multi'] ) || is_network_admin() || wp_doing_ajax() || ( defined('REST_REQUEST') && REST_REQUEST ) || ! current_user_can('manage_options') ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- only checks for bulk activation
-            return;
-        }
-
-        wp_safe_redirect( self::url() );
-        exit;
     }
 
     public function action_links($links) {
@@ -224,7 +212,8 @@ class admin_settings {
         $image_id                   = absint( $input['fallback_image_id'] ?? 0 );
         $clean['fallback_image_id'] = $image_id && wp_attachment_is_image( $image_id ) ? $image_id : 0;
 
-        return $clean;
+        // add-ons sanitize the keys they added to the defaults
+        return apply_filters( 'alrp_sanitize_settings', $clean, $input );
     }
 
     public function enqueue_assets($hook) {
@@ -240,6 +229,9 @@ class admin_settings {
         wp_enqueue_script('alrp_admin_settings', ALRP_PLUGIN_URL . 'build/admin-settings.js', $asset['dependencies'], $asset['version'], true);
         wp_add_inline_script('alrp_admin_settings', 'window.alrpSettingsData = ' . wp_json_encode( self::app_data() ) . ';', 'before');
         wp_set_script_translations('alrp_admin_settings', 'softicon-related-posts');
+
+        // add-ons enqueue their settings tabs here, with alrp_admin_settings as a dependency
+        do_action('alrp_admin_enqueue_scripts');
     }
 
     // everything the React settings app needs on first paint
@@ -259,7 +251,7 @@ class admin_settings {
             }
         }
 
-        return array(
+        return apply_filters( 'alrp_admin_app_data', array(
             'settings'   => $settings,
             'choices'    => self::choices(),
             'postTypes'  => self::post_type_options(),
@@ -269,7 +261,14 @@ class admin_settings {
             'fallback'   => $image ? $image : $settings['fallback_image'],
             'version'    => ALRP_PLUGIN_VERSION,
             'helpUrl'    => self::url( help_page::PAGE ),
-        );
+            'isPro'      => false,
+            'proUrl'     => self::pro_url(),
+        ) );
+    }
+
+    // Freemius lists the Pro add-on on its Add-Ons page
+    public static function pro_url() {
+        return function_exists('alrp_fs') ? alrp_fs()->get_addons_url() : '';
     }
 
     // hex from the settings page, rgb()/rgba() from the block's color picker

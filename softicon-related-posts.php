@@ -3,7 +3,7 @@
 * 
 * Plugin Name: SoftIcon Related Posts – Similar Posts & Internal Linking
 * Description: Displays related posts based on categories or tags to enhance engagement and navigation.
-* Version: 1.6.1
+* Version: 1.7.0
 * Requires at least: 6.3
 * Requires PHP: 7.1
 * Author: Al Amin
@@ -17,6 +17,40 @@
 
 
 if ( !defined('ABSPATH') ) { exit; }
+
+if ( ! function_exists( 'alrp_fs' ) ) {
+    // Freemius SDK: optional usage opt-in and the Add-Ons page where the Pro add-on is offered
+    function alrp_fs() {
+        global $alrp_fs;
+
+        if ( ! isset( $alrp_fs ) ) {
+            require_once dirname( __FILE__ ) . '/vendor/freemius/start.php';
+
+            $alrp_fs = fs_dynamic_init( array(
+                'id'               => '41092',
+                'slug'             => 'softicon-related-posts',
+                'type'             => 'plugin',
+                'public_key'       => 'pk_533b8e0e365ac618a720a5f5bbeff',
+                'is_premium'       => false,
+                'has_addons'       => true,
+                'has_paid_plans'   => false,
+                'is_org_compliant' => true,
+                'menu'             => array(
+                    'slug'       => 'alrp-settings',
+                    'first-path' => 'admin.php?page=alrp-settings',
+                    'account'    => false,
+                    'contact'    => false,
+                    'support'    => false,
+                ),
+            ) );
+        }
+
+        return $alrp_fs;
+    }
+
+    alrp_fs();
+    do_action( 'alrp_fs_loaded' );
+}
 
 class ALRP_Related_posts{
 
@@ -42,7 +76,7 @@ class ALRP_Related_posts{
     }
 
     public function defined_constants() {
-        define('ALRP_PLUGIN_VERSION', '1.6.1');
+        define('ALRP_PLUGIN_VERSION', '1.7.0');
         define('ALRP_PLUGIN_PATH', plugin_dir_path(__FILE__));
         define('ALRP_PLUGIN_URL', plugin_dir_url(__FILE__));
         define('ALRP_PLUGIN_ASSETS', plugin_dir_url(__FILE__) . 'assets/');
@@ -71,6 +105,8 @@ class ALRP_Related_posts{
         new ALRP_Related_Posts\rest();
         add_action( 'widgets_init', array( 'ALRP_Related_Posts\widget', 'register' ) );
 
+        // add-ons such as SoftIcon Related Posts Pro hook in here
+        do_action( 'alrp_loaded' );
     }
 
     public function alrp_plugins_enqueue_assets(){
@@ -82,6 +118,19 @@ class ALRP_Related_posts{
     }
 }
 ALRP_Related_posts::get_instance();
-register_activation_hook( __FILE__, array( 'ALRP_Related_Posts\\admin_settings', 'on_activate' ) );
+
+// Freemius runs this on uninstall, so it can also record the uninstall reason
+function alrp_uninstall_cleanup() {
+    delete_option( 'alrp_settings' );
+    delete_post_meta_by_key( '_alrp_hide' );
+    delete_post_meta_by_key( '_alrp_manual_ids' );
+    delete_option( 'alrp_cache_version' );
+    delete_transient( 'alrp_activation_redirect' );
+
+    global $wpdb;
+    // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- one-off cleanup of this plugin's transients, no API lists them by prefix
+    $wpdb->query( "DELETE FROM {$wpdb->options} WHERE option_name LIKE '\_transient\_alrp\_%' OR option_name LIKE '\_transient\_timeout\_alrp\_%'" );
+}
+alrp_fs()->add_action( 'after_uninstall', 'alrp_uninstall_cleanup' );
  
 

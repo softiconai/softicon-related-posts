@@ -2,17 +2,27 @@ import { __ } from '@wordpress/i18n';
 import { useCallback, useEffect, useMemo, useState } from '@wordpress/element';
 import { Card, CardBody, SnackbarList, TabPanel } from '@wordpress/components';
 import apiFetch from '@wordpress/api-fetch';
+import { applyFilters } from '@wordpress/hooks';
 import Header from './Header';
 import Preview from './Preview';
 import General from './Panels/General';
 import Filters from './Panels/Filters';
 import Display from './Panels/Display';
 import Design from './Panels/Design';
+import Section from './Panels/Section';
+import ToggleRow from './Fields/ToggleRow';
+import Tiles from './Fields/Tiles';
+import Pills from './Fields/Pills';
+import MediaField from './Fields/MediaField';
+import ColorControl from '../../Components/Panel/ColorControl';
 
 const data = window.alrpSettingsData || {};
 
+// Shared with add-on tabs, so their panels look like the built-in ones.
+const ui = { Section, ToggleRow, Tiles, Pills, MediaField, ColorControl };
+
 // className picks the dashicon shown before each tab title (settings.scss)
-const tabs = [
+const baseTabs = [
 	{ name: 'general', title: __('General', 'softicon-related-posts'), className: 'alrpTab-general', Panel: General },
 	{ name: 'filters', title: __('Filters', 'softicon-related-posts'), className: 'alrpTab-filters', Panel: Filters },
 	{ name: 'display', title: __('Display', 'softicon-related-posts'), className: 'alrpTab-display', Panel: Display },
@@ -27,7 +37,10 @@ const App = () => {
 
 	const isDirty = JSON.stringify(settings) !== saved;
 	const set = useCallback(key => value => setSettings(prev => ({ ...prev, [key]: value })), []);
-	const panelProps = useMemo(() => ({ settings, set, data }), [settings, set]);
+	const panelProps = useMemo(() => ({ settings, set, data, ui }), [settings, set]);
+
+	// Add-ons add tabs as { name, title, className, Panel }; Panel gets the same props as the built-in panels.
+	const tabs = useMemo(() => applyFilters('alrp.settings.tabs', baseTabs, data), []);
 
 	const notify = (content, status = 'success') => setNotices(list => [...list, { id: Date.now(), content, status }]);
 
@@ -69,7 +82,7 @@ const App = () => {
 	}, [isDirty]);
 
 	return <div className='alrpSettings'>
-		<Header {...{ isDirty, saving, save, version: data.version, helpUrl: data.helpUrl }} />
+		<Header {...{ isDirty, saving, save, version: data.version, helpUrl: data.helpUrl, proUrl: data.isPro ? '' : data.proUrl }} />
 
 		<div className='alrpSettingsBody'>
 			<Card className='alrpSettingsMain'>

@@ -38,6 +38,11 @@ class get_category_show_posts {
             return $contents;
         }
 
+        // add-ons can take over placement, e.g. to show the list inside the content instead
+        if ( ! apply_filters( 'alrp_auto_display', true, get_the_ID(), $settings ) ) {
+            return $contents;
+        }
+
         $html = $this->render( get_the_ID(), $settings );
         return 'before' === $settings['position'] ? $html . $contents : $contents . $html;
     }
@@ -131,6 +136,7 @@ class get_category_show_posts {
 
         // hand-picked posts first, automatic ones fill the remaining slots
         $ids = array_values( array_unique( array_merge( $manual, $auto ) ) );
+        $ids = apply_filters( 'alrp_related_post_ids', $ids, $post_id, $settings );
         if ( ! $ids ) {
             return array();
         }
@@ -144,6 +150,7 @@ class get_category_show_posts {
             'posts_per_page'      => $limit,
             'ignore_sticky_posts' => true,
             'no_found_rows'       => true,
+            'suppress_filters'    => false, // lets WPML and Polylang keep the current language
         ) );
     }
 
@@ -194,6 +201,7 @@ class get_category_show_posts {
             'exclude'             => array_merge( array( $post_id ), $manual, $settings['exclude_posts'] ), // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude -- small list: the current post, hand-picked and excluded IDs
             'ignore_sticky_posts' => true,
             'no_found_rows'       => true,
+            'suppress_filters'    => false, // lets WPML and Polylang keep the current language
         );
 
         // category__not_in would join the OR group above and match everything, so AND it explicitly
@@ -309,9 +317,9 @@ class get_category_show_posts {
         ob_start();
         printf( '<div class="%1$s" style="%2$s">', esc_attr( $this->wrapper_classes( $settings ) ), esc_attr( $this->wrapper_style( $settings ) ) );
         if ( $settings['show_categories'] && $terms ) {
-            include $this->template_path('category.php');
+            include $this->template_path('category.php', $settings);
         }
-        include $this->template_path('posts.php');
+        include $this->template_path('posts.php', $settings);
         echo '</div>';
         $html = ob_get_clean();
 
@@ -336,7 +344,7 @@ class get_category_show_posts {
         if ( $settings['card_bg'] ) {
             $classes[] = 'alrp_has_bg';
         }
-        return implode( ' ', $classes );
+        return implode( ' ', apply_filters( 'alrp_wrapper_classes', $classes, $settings ) );
     }
 
     private function wrapper_style($settings) {
@@ -346,6 +354,7 @@ class get_category_show_posts {
             '--alrp-card-bg'     => $settings['card_bg'],
             '--alrp-radius'      => $settings['radius'] ? $settings['radius'] . 'px' : '',
         );
+        $vars = apply_filters( 'alrp_wrapper_style_vars', $vars, $settings );
 
         $style = '';
         foreach ( array_filter( $vars ) as $name => $value ) {
@@ -355,8 +364,8 @@ class get_category_show_posts {
     }
 
     // themes can override a template by copying it to yourtheme/softicon-related-posts/
-    private function template_path($name) {
+    private function template_path($name, $settings = array()) {
         $path = locate_template( 'softicon-related-posts/' . $name );
-        return apply_filters('alrp_template_path', $path ?: ALRP_PLUGIN_PATH . 'templates/' . $name, $name);
+        return apply_filters('alrp_template_path', $path ?: ALRP_PLUGIN_PATH . 'templates/' . $name, $name, $settings);
     }
 }

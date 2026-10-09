@@ -52,6 +52,11 @@ class rest {
 
     public function save_settings( \WP_REST_Request $request ) {
         $clean = admin_settings::sanitize( $request->get_param('settings') );
+
+        // keep values saved by add-ons that are not active right now, so turning Pro off and on loses nothing
+        $saved = get_option( admin_settings::OPTION, array() );
+        $clean = $clean + array_diff_key( is_array($saved) ? $saved : array(), $clean );
+
         update_option( admin_settings::OPTION, $clean );
         return rest_ensure_response( admin_settings::get() );
     }

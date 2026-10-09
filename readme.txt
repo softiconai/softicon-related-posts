@@ -4,7 +4,7 @@ Tags: related posts, similar posts, internal links, related content, gutenberg
 Requires at least: 6.3
 Tested up to: 7.1
 Requires PHP: 7.1
-Stable tag: 1.6.1
+Stable tag: 1.7.0
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -104,7 +104,14 @@ Copy `templates/posts.php` or `templates/category.php` into `yourtheme/softicon-
 * `alrp_template_path` – change which template file is loaded
 * `alrp_cache_ttl` – cache lifetime in seconds (default one day)
 * `alrp_relevance_weights` – points per shared term for "Most relevant" (default category 1, tag 2)
+* `alrp_related_post_ids` – filter or reorder the final list of related post IDs
+* `alrp_auto_display` – return false to stop the automatic list on a post
+* `alrp_wrapper_classes` / `alrp_wrapper_style_vars` – add classes or CSS variables to the wrapper
+* `alrp_default_settings`, `alrp_setting_choices`, `alrp_sanitize_settings` – add your own settings
+* `alrp_block_atts` – map extra block attributes to settings
 * `alrp_video_urls` – tutorial video URLs shown on the settings page
+
+Settings page (JavaScript, `@wordpress/hooks`): `alrp.settings.tabs` adds tabs, `alrp.block.inspector` adds panels to the block sidebar.
 
 = Feedback =
 
@@ -185,7 +192,9 @@ Use the Design options in Related Posts → Settings or in the block sidebar. Fo
 
 = Does it collect any data? =
 
-No. The plugin does not track visitors, set cookies or contact any external service.
+The plugin never tracks your visitors and sets no cookies on your site.
+
+After activation, the plugin asks if you want to opt in to security and feature update emails and share basic, non-sensitive diagnostic data (WordPress, PHP and plugin versions, site URL and admin email) with us through [Freemius](https://freemius.com). It is entirely optional: click "Skip" and nothing is sent. The Add-Ons page loads its list of add-ons from Freemius. See the [Freemius privacy policy](https://freemius.com/privacy/).
 
 = Is it translation ready? =
 
@@ -203,6 +212,13 @@ Yes. All text can be translated, and a translation template is included in the `
 8. Settings, Filters tab: exclude categories or posts and limit results to recent posts.
 
 == Changelog ==
+
+= 1.7.0 =
+* New: Related posts stay in the current language on WPML and Polylang sites
+* New: Add-Ons page and optional opt-in for update emails (powered by Freemius, you can skip it)
+* New: Developer hooks to extend settings, placement, layouts, the settings page and the block sidebar
+* Improved: A layout from a deactivated add-on falls back to Grid instead of breaking the design
+* Improved: Settings that belong to a deactivated add-on are kept when you save
 
 = 1.6.1 =
 * Improved: The block sidebar uses the plugin's own lighter controls
@@ -265,6 +281,9 @@ Yes. All text can be translated, and a translation template is included in the `
 
 
 == Upgrade Notice ==
+
+= 1.7.0 =
+WPML and Polylang support, an Add-Ons page and new developer hooks. An optional opt-in screen appears once; you can skip it.
 
 = 1.6.1 =
 Lighter block editor controls. No changes to how related posts look on your site.

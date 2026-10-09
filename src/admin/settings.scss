@@ -80,6 +80,21 @@ $accent: var(--wp-admin-theme-color, #3858e9);
 	font-size: 13px;
 }
 
+// Same brand gradient as the header icon, kept small so it never competes with Save.
+.alrpProLink.components-button {
+	padding: 4px 12px;
+	height: 30px;
+	border-radius: 20px;
+	color: #fff;
+	font-weight: 600;
+	background: linear-gradient(135deg, #4f46e5, #06b6d4);
+
+	&:hover:not(:disabled) {
+		color: #fff;
+		opacity: 0.9;
+	}
+}
+
 .alrpSettingsBody {
 	display: grid;
 	grid-template-columns: minmax(0, 1fr) minmax(320px, 440px);
