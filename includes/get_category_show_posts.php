@@ -224,7 +224,8 @@ class get_category_show_posts {
         $args           = apply_filters('alrp_related_posts_query_args', $args, $post_id, $settings);
         $args['fields'] = 'ids';
 
-        $key = $post_id . '|' . wp_json_encode( $args );
+        // the order is part of the key: orders that share a query (relevance, add-on orders) sort the result differently
+        $key = $post_id . '|' . $orderby . '|' . wp_json_encode( $args );
         $ids = cache::get( $key );
         if ( ! is_array( $ids ) ) {
             $ids = get_posts( $args );
@@ -318,7 +319,8 @@ class get_category_show_posts {
         }
 
         ob_start();
-        printf( '<div class="%1$s" style="%2$s">', esc_attr( $this->wrapper_classes( $settings ) ), esc_attr( $this->wrapper_style( $settings ) ) );
+        // data-alrp-source and data-alrp-post let add-ons (e.g. Pro analytics) tell which link was clicked
+        printf( '<div class="%1$s" style="%2$s" data-alrp-source="%3$d">', esc_attr( $this->wrapper_classes( $settings ) ), esc_attr( $this->wrapper_style( $settings ) ), (int) $post_id );
         if ( $settings['show_categories'] && $terms ) {
             include $this->template_path('category.php', $settings);
         }

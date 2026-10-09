@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             // core's excerpt pipeline, so membership and paywall filters apply
             $alrp_text = get_the_excerpt( $post );
         ?>
-            <div class="single_item">
+            <div class="single_item" data-alrp-post="<?php echo (int) $post->ID; ?>">
                 <?php if ( $settings['show_image'] ) : ?>
                     <a class="alrp_img_link" href="<?php echo esc_url( $alrp_permalink ); ?>">
                         <div class="img">
