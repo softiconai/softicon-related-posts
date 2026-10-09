@@ -1,5 +1,5 @@
 === SoftIcon Related Posts – Similar Posts & Internal Linking ===
-Contributors: omor45faruk
+Contributors: alamincmt
 Tags: related posts, similar posts, internal links, related content, gutenberg
 Requires at least: 6.3
 Tested up to: 7.1
@@ -108,7 +108,7 @@ Copy `templates/posts.php` or `templates/category.php` into `yourtheme/softicon-
 
 = Feedback =
 
-Missing a feature? Found a bug? Please open a topic in the support forum or [email us](mailto:omor45faruk@gmail.com "Send feedback"). We read every message.
+Missing a feature? Found a bug? Please open a topic in the [support forum](https://wordpress.org/support/plugin/softicon-related-posts/) or an issue on [GitHub](https://github.com/softiconai/softicon-related-posts/issues). We read every message.
 
 == Installation ==
 

@@ -6,8 +6,8 @@
 * Version: 1.6.0
 * Requires at least: 6.3
 * Requires PHP: 7.1
-* Author: Omor Faruk
-* Author URI: https://github.com/omor45faruk
+* Author: Al Amin
+* Author URI: https://profiles.wordpress.org/alamincmt/
 * License: GPLv3
 * License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 * Text Domain: softicon-related-posts
