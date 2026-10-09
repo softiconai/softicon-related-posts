@@ -6,7 +6,7 @@ import { tabs } from '../../../utils/options';
 
 const Settings = ({ attributes, setAttributes }) => {
 	return <InspectorControls>
-		<TabPanel className='bPlTabPanel' activeClass='activeTab' tabs={tabs}>
+		<TabPanel className='alrpTabs' tabs={tabs}>
 			{(tab) => <>
 				{'general' === tab.name && <General {...{ attributes, setAttributes }} />}
 

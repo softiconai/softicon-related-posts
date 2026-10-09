@@ -1,6 +1,6 @@
 {
 	"name": "softicon-related-posts",
-	"version": "1.6.0",
+	"version": "1.6.1",
 	"description": "Related posts by category, tag or any taxonomy, with a Gutenberg block",
 	"main": "build/index.js",
 	"scripts": {

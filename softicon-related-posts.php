@@ -3,7 +3,7 @@
 * 
 * Plugin Name: SoftIcon Related Posts – Similar Posts & Internal Linking
 * Description: Displays related posts based on categories or tags to enhance engagement and navigation.
-* Version: 1.6.0
+* Version: 1.6.1
 * Requires at least: 6.3
 * Requires PHP: 7.1
 * Author: Al Amin
@@ -42,7 +42,7 @@ class ALRP_Related_posts{
     }
 
     public function defined_constants() {
-        define('ALRP_PLUGIN_VERSION', '1.6.0');
+        define('ALRP_PLUGIN_VERSION', '1.6.1');
         define('ALRP_PLUGIN_PATH', plugin_dir_path(__FILE__));
         define('ALRP_PLUGIN_URL', plugin_dir_url(__FILE__));
         define('ALRP_PLUGIN_ASSETS', plugin_dir_url(__FILE__) . 'assets/');

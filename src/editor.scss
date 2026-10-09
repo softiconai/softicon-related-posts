@@ -7,3 +7,34 @@
 .alrpResetBtn {
 	margin-top: 8px;
 }
+
+.alrpMt {
+	margin-top: 16px;
+}
+
+// Two equal-width tabs.
+.alrpTabs .components-tab-panel__tabs {
+	display: flex;
+	background: #fff;
+	border-bottom: 1px solid #e0e0e0;
+
+	.components-tab-panel__tabs-item {
+		flex: 1;
+		justify-content: center;
+		font-weight: 500;
+	}
+}
+
+// Sentence-case labels, matching the settings page.
+.alrpTabs {
+	.components-base-control__label,
+	.components-base-control .components-input-control__label.components-input-control__label {
+		font-size: 13px;
+		font-weight: 400;
+		text-transform: none;
+	}
+
+	p.alrpMt {
+		margin-top: 20px;
+	}
+}

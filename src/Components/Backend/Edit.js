@@ -4,7 +4,6 @@ import { Disabled, Placeholder } from '@wordpress/components';
 import ServerSideRender from '@wordpress/server-side-render';
 import Settings from './Settings/Settings';
 import { blockIcon } from '../../utils/icons';
-import '../../../../bpl-tools/Components/style.scss';
 
 const Edit = (props) => {
 	const { attributes, setAttributes, context } = props;

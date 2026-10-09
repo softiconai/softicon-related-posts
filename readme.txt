@@ -4,7 +4,7 @@ Tags: related posts, similar posts, internal links, related content, gutenberg
 Requires at least: 6.3
 Tested up to: 7.1
 Requires PHP: 7.1
-Stable tag: 1.6.0
+Stable tag: 1.6.1
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -195,12 +195,18 @@ Yes. All text can be translated, and a translation template is included in the `
 
 1. Related posts in a responsive grid below an article, with featured images, excerpts and author.
 2. List layout (image on the left) and minimal layout (titles and dates only).
-3. Settings page: choose post types, position, how related posts are matched and ordered, and filters.
-4. Settings page: display options and design controls for layout, image ratio, cards, corners and colors.
+3. Settings, General tab: post types, position, matching, order and number of posts, with a live preview.
+4. Settings, Design tab: layout, image ratio, card style, corner radius, hover zoom and colors, with a live preview.
 5. The Related Posts block in the block editor with live preview and sidebar options.
 6. Hand-pick related posts for any article from the post editor.
+7. Settings, Display tab: section title, columns, featured image, fallback image, excerpt, date, author and read more.
+8. Settings, Filters tab: exclude categories or posts and limit results to recent posts.
 
 == Changelog ==
+
+= 1.6.1 =
+* Improved: The block sidebar uses the plugin's own lighter controls
+* Improved: Smaller editor stylesheet
 
 = 1.6.0 =
 * New: Pages and custom post types support
@@ -259,6 +265,9 @@ Yes. All text can be translated, and a translation template is included in the `
 
 
 == Upgrade Notice ==
+
+= 1.6.1 =
+Lighter block editor controls. No changes to how related posts look on your site.
 
 = 1.6.0 =
 Adds pages and custom post types, a sidebar widget and RSS feed links.
