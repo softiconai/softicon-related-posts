@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-09T03:09:46+00:00\n"
+"POT-Creation-Date: 2026-10-09T03:36:50+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: softicon-related-posts\n"
@@ -34,118 +34,119 @@ msgstr ""
 msgid "https://github.com/omor45faruk"
 msgstr ""
 
-#: includes/admin_settings.php:26
-#: includes/admin_settings.php:125
-#: includes/admin_settings.php:126
+#: includes/admin_settings.php:28
+#: includes/admin_settings.php:127
+#: includes/admin_settings.php:128
 #: includes/post_meta_box.php:28
 #: includes/widget.php:23
 #: build/index.js:1
 msgid "Related Posts"
 msgstr ""
 
-#: includes/admin_settings.php:41
+#: includes/admin_settings.php:43
 msgid "Read More"
 msgstr ""
 
-#: includes/admin_settings.php:64
+#: includes/admin_settings.php:66
 msgid "After content"
 msgstr ""
 
-#: includes/admin_settings.php:65
+#: includes/admin_settings.php:67
 msgid "Before content"
 msgstr ""
 
-#: includes/admin_settings.php:66
+#: includes/admin_settings.php:68
 msgid "Manual (shortcode only)"
 msgstr ""
 
-#: includes/admin_settings.php:69
+#: includes/admin_settings.php:71
 msgid "Same category"
 msgstr ""
 
-#: includes/admin_settings.php:70
+#: includes/admin_settings.php:72
 msgid "Same tag"
 msgstr ""
 
-#: includes/admin_settings.php:71
+#: includes/admin_settings.php:73
 msgid "Same category or tag"
 msgstr ""
 
-#: includes/admin_settings.php:72
+#: includes/admin_settings.php:74
 msgid "Any shared taxonomy (for custom post types)"
 msgstr ""
 
-#: includes/admin_settings.php:75
+#: includes/admin_settings.php:77
+#: build/admin-settings.js:1
 msgid "Grid"
 msgstr ""
 
-#: includes/admin_settings.php:76
+#: includes/admin_settings.php:78
 msgid "List (image left)"
 msgstr ""
 
-#: includes/admin_settings.php:77
+#: includes/admin_settings.php:79
 msgid "Minimal (titles only)"
 msgstr ""
 
-#: includes/admin_settings.php:80
+#: includes/admin_settings.php:82
 msgid "Fixed height (200px)"
 msgstr ""
 
-#: includes/admin_settings.php:84
+#: includes/admin_settings.php:86
 msgid "Square (1:1)"
 msgstr ""
 
-#: includes/admin_settings.php:87
+#: includes/admin_settings.php:89
 msgid "None"
 msgstr ""
 
-#: includes/admin_settings.php:88
+#: includes/admin_settings.php:90
 msgid "Border"
 msgstr ""
 
-#: includes/admin_settings.php:89
+#: includes/admin_settings.php:91
 msgid "Shadow"
 msgstr ""
 
-#: includes/admin_settings.php:92
+#: includes/admin_settings.php:94
 msgid "Random"
 msgstr ""
 
-#: includes/admin_settings.php:93
+#: includes/admin_settings.php:95
 msgid "Most relevant (most shared tags and categories)"
 msgstr ""
 
-#: includes/admin_settings.php:94
+#: includes/admin_settings.php:96
 msgid "Latest"
 msgstr ""
 
-#: includes/admin_settings.php:95
+#: includes/admin_settings.php:97
 msgid "Recently updated"
 msgstr ""
 
-#: includes/admin_settings.php:96
+#: includes/admin_settings.php:98
 msgid "Most commented"
 msgstr ""
 
-#: includes/admin_settings.php:97
+#: includes/admin_settings.php:99
 msgid "Title (A-Z)"
 msgstr ""
 
-#: includes/admin_settings.php:135
+#: includes/admin_settings.php:137
 msgid "Related Posts Settings"
 msgstr ""
 
-#: includes/admin_settings.php:135
-#: includes/admin_settings.php:151
+#: includes/admin_settings.php:137
+#: includes/admin_settings.php:175
 msgid "Settings"
 msgstr ""
 
-#: includes/admin_settings.php:137
+#: includes/admin_settings.php:139
 #: build/admin-settings.js:1
 msgid "Help & Videos"
 msgstr ""
 
-#: includes/admin_settings.php:270
+#: includes/admin_settings.php:294
 msgid "The Related Posts settings need JavaScript."
 msgstr ""
 
@@ -379,7 +380,11 @@ msgid "Where related posts appear"
 msgstr ""
 
 #: build/admin-settings.js:1
-msgid "Show related posts on single posts"
+msgid "Show related posts automatically"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Adds them to every single post of the chosen types."
 msgstr ""
 
 #: build/admin-settings.js:1
@@ -422,11 +427,11 @@ msgid "RSS feed"
 msgstr ""
 
 #: build/admin-settings.js:1
-msgid "Add related post links to items in your RSS feed"
+msgid "Add related links to feed items"
 msgstr ""
 
 #: build/admin-settings.js:1
-msgid "Added to the full text of feed items."
+msgid "Added to the full text of each item in your RSS feed."
 msgstr ""
 
 #: build/admin-settings.js:1
@@ -438,11 +443,15 @@ msgid "Leave out"
 msgstr ""
 
 #: build/admin-settings.js:1
+msgid "Keep some content out of every related posts list."
+msgstr ""
+
+#: build/admin-settings.js:1
 msgid "Exclude categories"
 msgstr ""
 
 #: build/admin-settings.js:1
-msgid "Posts in these categories never appear as related posts."
+msgid "Posts in the highlighted categories never appear as related posts."
 msgstr ""
 
 #: build/admin-settings.js:1
@@ -493,7 +502,11 @@ msgid "Tablets and phones automatically use fewer."
 msgstr ""
 
 #: build/admin-settings.js:1
-msgid "Show current post categories above related posts"
+msgid "Show the current post’s categories"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Shown as chips above the related posts."
 msgstr ""
 
 #: build/admin-settings.js:1
@@ -522,8 +535,7 @@ msgid "Card content"
 msgstr ""
 
 #: build/admin-settings.js:1
-#: build/index.js:1
-msgid "Show excerpt"
+msgid "Excerpt"
 msgstr ""
 
 #: build/admin-settings.js:1
@@ -531,17 +543,15 @@ msgid "Excerpt length (words)"
 msgstr ""
 
 #: build/admin-settings.js:1
-#: build/index.js:1
-msgid "Show publish date"
+msgid "Publish date"
 msgstr ""
 
 #: build/admin-settings.js:1
-msgid "Show author avatar and name"
+msgid "Author avatar and name"
 msgstr ""
 
 #: build/admin-settings.js:1
-#: build/index.js:1
-msgid "Show read more link"
+msgid "Read more link"
 msgstr ""
 
 #: build/admin-settings.js:1
@@ -550,6 +560,18 @@ msgstr ""
 
 #: build/admin-settings.js:1
 msgid "Design"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "List"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Minimal"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Fixed"
 msgstr ""
 
 #: build/admin-settings.js:1
@@ -564,6 +586,10 @@ msgstr ""
 #: build/admin-settings.js:1
 #: build/index.js:1
 msgid "Image ratio"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Fixed keeps every image 200px tall."
 msgstr ""
 
 #: build/admin-settings.js:1
@@ -623,7 +649,19 @@ msgid "Show current post categories"
 msgstr ""
 
 #: build/index.js:1
+msgid "Show excerpt"
+msgstr ""
+
+#: build/index.js:1
+msgid "Show publish date"
+msgstr ""
+
+#: build/index.js:1
 msgid "Show author"
+msgstr ""
+
+#: build/index.js:1
+msgid "Show read more link"
 msgstr ""
 
 #: build/index.js:1

@@ -104,6 +104,9 @@ $accent: var(--wp-admin-theme-color, #3858e9);
 	}
 
 	.components-tab-panel__tabs-item {
+		display: inline-flex;
+		flex-direction: row;
+		align-items: center;
 		height: 52px;
 		font-size: 14px;
 		font-weight: 500;
@@ -111,6 +114,21 @@ $accent: var(--wp-admin-theme-color, #3858e9);
 		&.is-active {
 			box-shadow: inset 0 -3px 0 $accent;
 		}
+
+		&::before {
+			position: static;
+			display: inline-block;
+			width: 18px;
+			height: 18px;
+			margin-right: 6px;
+			font: normal 18px/1 dashicons;
+			opacity: 0.7;
+		}
+
+		&.alrpTab-general::before { content: "\f111"; }
+		&.alrpTab-filters::before { content: "\f536"; }
+		&.alrpTab-display::before { content: "\f177"; }
+		&.alrpTab-design::before { content: "\f100"; }
 	}
 }
 
@@ -123,7 +141,10 @@ $accent: var(--wp-admin-theme-color, #3858e9);
 	}
 
 	header {
-		margin-bottom: 16px;
+		display: flex;
+		align-items: flex-start;
+		gap: 12px;
+		margin-bottom: 18px;
 
 		h2 {
 			margin: 0;
@@ -135,6 +156,24 @@ $accent: var(--wp-admin-theme-color, #3858e9);
 			margin: 4px 0 0;
 			color: $muted;
 		}
+	}
+}
+
+.alrpSectionIcon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+	flex-shrink: 0;
+	border-radius: 8px;
+	color: #4f46e5;
+	background: linear-gradient(135deg, #eef2ff, #ecfeff);
+
+	.dashicon {
+		width: 18px;
+		height: 18px;
+		font-size: 18px;
 	}
 }
 
@@ -172,14 +211,144 @@ $accent: var(--wp-admin-theme-color, #3858e9);
 	}
 }
 
-.alrpSegmented {
-	display: inline-flex;
-	flex-wrap: wrap;
-	gap: 6px;
+// visual choice tiles
+.alrpTiles {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(112px, 1fr));
+	gap: 10px;
 	margin-top: 8px;
+}
 
-	.components-button {
-		border-radius: 6px;
+.alrpTile {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 6px;
+	padding: 10px 8px 8px;
+	border: 1.5px solid $border;
+	border-radius: 10px;
+	background: #fff;
+	color: #8c8f94;
+	cursor: pointer;
+	transition: border-color 0.15s, box-shadow 0.15s, color 0.15s;
+
+	&:hover {
+		border-color: #a7aaad;
+		color: #646970;
+	}
+
+	&:focus-visible {
+		outline: 2px solid $accent;
+		outline-offset: 2px;
+	}
+
+	&.is-selected {
+		border-color: $accent;
+		color: $accent;
+		box-shadow: 0 0 0 3px rgba(56, 88, 233, 0.12);
+
+		&::after {
+			content: "\f147";
+			position: absolute;
+			top: 6px;
+			right: 6px;
+			width: 18px;
+			height: 18px;
+			border-radius: 50%;
+			background: $accent;
+			color: #fff;
+			font: normal 16px/18px dashicons;
+			text-align: center;
+		}
+	}
+}
+
+.alrpTileArt svg {
+	display: block;
+	width: 96px;
+	height: 58px;
+}
+
+.alrpTileLabel {
+	font-size: 12px;
+	font-weight: 600;
+	color: #1e1e1e;
+}
+
+// pills for multi choice
+.alrpPills {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-top: 8px;
+}
+
+.alrpPill {
+	padding: 6px 14px;
+	border: 1.5px solid $border;
+	border-radius: 999px;
+	background: #fff;
+	color: #1e1e1e;
+	font-size: 13px;
+	cursor: pointer;
+	transition: all 0.15s;
+
+	&:hover {
+		border-color: #a7aaad;
+	}
+
+	&.is-on {
+		border-color: $accent;
+		background: $accent;
+		color: #fff;
+
+		&::before {
+			content: "\f147";
+			margin: 0 4px 0 -4px;
+			font: normal 14px/1 dashicons;
+			vertical-align: -2px;
+		}
+	}
+}
+
+// one toggle per row
+.alrpToggleRow {
+	padding: 12px 14px;
+	border: 1px solid #f0f0f0;
+	border-radius: 10px;
+	transition: background 0.15s, border-color 0.15s;
+
+	&.is-on {
+		background: #f6f7ff;
+		border-color: #e3e7ff;
+	}
+
+	.components-toggle-control .components-flex {
+		flex-direction: row-reverse;
+		justify-content: space-between;
+	}
+
+	.components-toggle-control__label,
+	.components-toggle-control label {
+		font-weight: 500;
+	}
+
+	.components-toggle-control__help {
+		margin: 4px 0 0;
+	}
+}
+
+.alrpColors {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+	gap: 12px;
+
+	.alrpColor {
+		justify-content: space-between;
+		padding: 10px 14px;
+		border: 1px solid #f0f0f0;
+		border-radius: 10px;
 	}
 }
 

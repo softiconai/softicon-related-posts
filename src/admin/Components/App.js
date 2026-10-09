@@ -11,11 +11,12 @@ import Design from './Panels/Design';
 
 const data = window.alrpSettingsData || {};
 
+// className picks the dashicon shown before each tab title (settings.scss)
 const tabs = [
-	{ name: 'general', title: __('General', 'softicon-related-posts'), Panel: General },
-	{ name: 'filters', title: __('Filters', 'softicon-related-posts'), Panel: Filters },
-	{ name: 'display', title: __('Display', 'softicon-related-posts'), Panel: Display },
-	{ name: 'design', title: __('Design', 'softicon-related-posts'), Panel: Design }
+	{ name: 'general', title: __('General', 'softicon-related-posts'), className: 'alrpTab-general', Panel: General },
+	{ name: 'filters', title: __('Filters', 'softicon-related-posts'), className: 'alrpTab-filters', Panel: Filters },
+	{ name: 'display', title: __('Display', 'softicon-related-posts'), className: 'alrpTab-display', Panel: Display },
+	{ name: 'design', title: __('Design', 'softicon-related-posts'), className: 'alrpTab-design', Panel: Design }
 ];
 
 const App = () => {
