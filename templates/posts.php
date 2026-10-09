@@ -39,6 +39,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 <a class="title" href="<?php echo esc_url( $alrp_permalink ); ?>">
                     <?php echo esc_html($post->post_title); ?>
                 </a>
+                <?php do_action( 'alrp_item_after_title', $post, $settings ); ?>
                 <?php if ( $settings['show_date'] ) : ?>
                     <time class="date" datetime="<?php echo esc_attr( get_the_date( 'c', $post ) ); ?>">
                         <?php echo esc_html( get_the_date( '', $post ) ); ?>
@@ -58,6 +59,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                         <h4><?php echo esc_html($alrp_user->display_name);?></h4>
                     </div>
                 <?php endif; ?>
+                <?php do_action( 'alrp_item_end', $post, $settings ); ?>
             </div>
         <?php endforeach; ?>
     </div>

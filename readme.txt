@@ -110,6 +110,7 @@ Copy `templates/posts.php` or `templates/category.php` into `yourtheme/softicon-
 * `alrp_default_settings`, `alrp_setting_choices`, `alrp_sanitize_settings` – add your own settings
 * `alrp_block_atts` – map extra block attributes to settings
 * `alrp_render_settings` – adjust the settings a single list is rendered with
+* `alrp_item_after_title` / `alrp_item_end` (actions) – add markup inside each card, e.g. a price
 * `alrp_video_urls` – tutorial video URLs shown on the settings page
 
 Settings page (JavaScript, `@wordpress/hooks`): `alrp.settings.tabs` adds tabs, `alrp.settings.layouts` and `alrp.settings.layoutArt` add layout tiles, `alrp.block.inspector` adds panels to the block sidebar.
@@ -216,6 +217,7 @@ Yes. All text can be translated, and a translation template is included in the `
 
 = 1.7.0 =
 * New: Related posts stay in the current language on WPML and Polylang sites
+* Fix: WooCommerce products hidden from the catalog no longer appear in related lists (out of stock ones too, when the shop hides them)
 * New: Add-Ons page and optional opt-in for update emails (powered by Freemius, you can skip it)
 * New: Developer hooks to extend settings, placement, layouts, the settings page and the block sidebar
 * Improved: A layout from a deactivated add-on falls back to Grid instead of breaking the design

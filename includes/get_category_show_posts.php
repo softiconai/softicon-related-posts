@@ -221,6 +221,24 @@ class get_category_show_posts {
             $args['date_query'] = array( array( 'after' => $settings['max_age'] . ' months ago' ) );
         }
 
+        // WooCommerce: products hidden from the catalog (and out of stock ones when the shop hides them) stay out
+        if ( 'product' === $post_type && taxonomy_exists( 'product_visibility' ) ) {
+            $hidden = array( 'exclude-from-catalog' );
+            if ( 'yes' === get_option( 'woocommerce_hide_out_of_stock_items' ) ) {
+                $hidden[] = 'outofstock';
+            }
+            $args['tax_query'] = array( // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query -- same query, plus WooCommerce's catalog visibility
+                'relation' => 'AND',
+                $args['tax_query'],
+                array(
+                    'taxonomy' => 'product_visibility',
+                    'field'    => 'name',
+                    'terms'    => $hidden,
+                    'operator' => 'NOT IN',
+                ),
+            );
+        }
+
         $args           = apply_filters('alrp_related_posts_query_args', $args, $post_id, $settings);
         $args['fields'] = 'ids';
 
@@ -297,8 +315,12 @@ class get_category_show_posts {
             return '';
         }
 
-        $posts = $this->get_related_posts( $post_id, $settings );
-        if ( ! $posts ) {
+        return $this->render_posts( $this->get_related_posts( $post_id, $settings ), $post_id, $settings );
+    }
+
+    // renders a given list of posts with the list design; add-ons use it for lists they pick themselves
+    public function render_posts($posts, $post_id, $settings) {
+        if ( ! $posts || $this->rendering ) {
             return '';
         }
 
