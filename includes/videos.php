@@ -25,7 +25,7 @@ class videos {
     public static function all() {
         $videos = array(
             'overview'   => array( 'thumb' => '00-overview', 'length' => '1:12', 'title' => __('Overview: every feature in a minute', 'softicon-related-posts') ),
-            'setup'      => array( 'thumb' => '01-setup', 'length' => '0:37', 'title' => __('Setup & settings', 'softicon-related-posts') ),
+            'setup'      => array( 'thumb' => '01-setup', 'length' => '0:34', 'title' => __('Setup & settings', 'softicon-related-posts') ),
             'block'      => array( 'thumb' => '02-block', 'length' => '0:28', 'title' => __('The Related Posts block', 'softicon-related-posts') ),
             'design'     => array( 'thumb' => '03-design', 'length' => '0:29', 'title' => __('Layouts & design', 'softicon-related-posts') ),
             'smart'      => array( 'thumb' => '04-smart', 'length' => '0:23', 'title' => __('Most relevant & hand-picked posts', 'softicon-related-posts') ),
