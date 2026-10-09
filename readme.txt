@@ -18,6 +18,12 @@ Every related post is an internal link. More internal links help visitors discov
 
 It works the moment you activate it: related posts appear below every post with no setup. When you want more control, use the settings page, the **Related Posts block**, the shortcode or the sidebar widget.
 
+= Video overview =
+
+https://www.youtube.com/watch?v=3ODxUKYQb3s
+
+More tutorials: [setup](https://www.youtube.com/watch?v=IJxf5xBIr48&list=PLAh6o0IpwSF0), [the block](https://www.youtube.com/watch?v=_0auk_TwemQ&list=PLAh6o0IpwSF0), [layouts and design](https://www.youtube.com/watch?v=WoDOvQ1i6Eg&list=PLAh6o0IpwSF0), [smart matching](https://www.youtube.com/watch?v=LyrI5lycqp0&list=PLAh6o0IpwSF0), [pages and WooCommerce](https://www.youtube.com/watch?v=9M8uoJ5U8rI&list=PLAh6o0IpwSF0) and [every setting explained](https://www.youtube.com/watch?v=CMvccEjL4Yg&list=PLAh6o0IpwSF0). Or watch the [whole playlist](https://www.youtube.com/playlist?list=PLAh6o0IpwSF0).
+
 = Why choose SoftIcon Related Posts? =
 
 * **Works instantly** – activate and related posts appear under every article.
@@ -206,6 +212,7 @@ Yes. All text can be translated, and a translation template is included in the `
 * Security: Excerpts now go through WordPress' excerpt filters, so membership plugins can restrict them
 * Improved: Saving drafts no longer clears the related posts cache
 * Improved: Search results in "Pick related posts" close after you pick a post
+* New: Video tutorials on YouTube, linked from Related Posts → Help & Videos
 * New: Activating the plugin opens Related Posts → Settings (not on bulk activation or WP-CLI)
 * New: Settings page rebuilt in React with a live preview that updates before you save, Cmd/Ctrl+S to save and a warning for unsaved changes
 * New: Related Posts menu in the admin sidebar with Settings and a Help & Videos page (old Settings → Related Posts links redirect)

@@ -5,14 +5,16 @@ if ( !defined('ABSPATH') ) { exit;}
 // tutorial videos shown on the settings page; a video without a url is not shown
 class videos {
 
+    const PLAYLIST = 'https://www.youtube.com/playlist?list=PLAh6o0IpwSF0';
+
     const URLS = array(
-        'overview'   => '',
-        'setup'      => '',
-        'block'      => '',
-        'design'     => '',
-        'smart'      => '',
-        'everywhere' => '',
-        'settings'   => '',
+        'overview'   => 'https://www.youtube.com/watch?v=3ODxUKYQb3s&list=PLAh6o0IpwSF0',
+        'setup'      => 'https://www.youtube.com/watch?v=IJxf5xBIr48&list=PLAh6o0IpwSF0',
+        'block'      => 'https://www.youtube.com/watch?v=_0auk_TwemQ&list=PLAh6o0IpwSF0',
+        'design'     => 'https://www.youtube.com/watch?v=WoDOvQ1i6Eg&list=PLAh6o0IpwSF0',
+        'smart'      => 'https://www.youtube.com/watch?v=LyrI5lycqp0&list=PLAh6o0IpwSF0',
+        'everywhere' => 'https://www.youtube.com/watch?v=9M8uoJ5U8rI&list=PLAh6o0IpwSF0',
+        'settings'   => 'https://www.youtube.com/watch?v=CMvccEjL4Yg&list=PLAh6o0IpwSF0',
     );
 
     public function __construct()
@@ -25,7 +27,7 @@ class videos {
             'overview'   => array( 'thumb' => '00-overview', 'length' => '1:12', 'title' => __('Overview: every feature in a minute', 'softicon-related-posts') ),
             'setup'      => array( 'thumb' => '01-setup', 'length' => '0:37', 'title' => __('Setup & settings', 'softicon-related-posts') ),
             'block'      => array( 'thumb' => '02-block', 'length' => '0:28', 'title' => __('The Related Posts block', 'softicon-related-posts') ),
-            'design'     => array( 'thumb' => '03-design', 'length' => '0:26', 'title' => __('Layouts & design', 'softicon-related-posts') ),
+            'design'     => array( 'thumb' => '03-design', 'length' => '0:29', 'title' => __('Layouts & design', 'softicon-related-posts') ),
             'smart'      => array( 'thumb' => '04-smart', 'length' => '0:23', 'title' => __('Most relevant & hand-picked posts', 'softicon-related-posts') ),
             'everywhere' => array( 'thumb' => '05-everywhere', 'length' => '0:28', 'title' => __('Pages, products, widget & RSS', 'softicon-related-posts') ),
             'settings'   => array( 'thumb' => '06-all-settings', 'length' => '2:19', 'title' => __('Every setting explained', 'softicon-related-posts') ),
@@ -58,6 +60,7 @@ class videos {
         ?>
         <div id="alrp-videos" class="alrp-videos">
             <h2><?php esc_html_e('Video tutorials', 'softicon-related-posts'); ?></h2>
+            <p><a href="<?php echo esc_url( self::PLAYLIST ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e('Watch the whole playlist on YouTube', 'softicon-related-posts'); ?></a></p>
             <div class="alrp-videos-grid">
                 <?php foreach ( $videos as $video ) : ?>
                     <a class="alrp-video" href="<?php echo esc_url( $video['url'] ); ?>" target="_blank" rel="noopener noreferrer">

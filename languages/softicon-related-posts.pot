@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-09T03:36:50+00:00\n"
+"POT-Creation-Date: 2026-10-09T04:58:11+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: softicon-related-posts\n"
@@ -242,40 +242,44 @@ msgstr ""
 msgid "Search posts…"
 msgstr ""
 
-#: includes/videos.php:25
+#: includes/videos.php:27
 msgid "Overview: every feature in a minute"
 msgstr ""
 
-#: includes/videos.php:26
+#: includes/videos.php:28
 msgid "Setup & settings"
 msgstr ""
 
-#: includes/videos.php:27
+#: includes/videos.php:29
 msgid "The Related Posts block"
 msgstr ""
 
-#: includes/videos.php:28
+#: includes/videos.php:30
 msgid "Layouts & design"
 msgstr ""
 
-#: includes/videos.php:29
+#: includes/videos.php:31
 msgid "Most relevant & hand-picked posts"
 msgstr ""
 
-#: includes/videos.php:30
+#: includes/videos.php:32
 msgid "Pages, products, widget & RSS"
 msgstr ""
 
-#: includes/videos.php:31
+#: includes/videos.php:33
 msgid "Every setting explained"
 msgstr ""
 
-#: includes/videos.php:48
-#: includes/videos.php:60
+#: includes/videos.php:50
+#: includes/videos.php:62
 msgid "Video tutorials"
 msgstr ""
 
-#: includes/videos.php:69
+#: includes/videos.php:63
+msgid "Watch the whole playlist on YouTube"
+msgstr ""
+
+#: includes/videos.php:72
 msgid "(opens in a new tab)"
 msgstr ""
 
