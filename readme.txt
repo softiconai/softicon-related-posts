@@ -20,9 +20,9 @@ It works the moment you activate it: related posts appear below every post with 
 
 = Video overview =
 
-https://www.youtube.com/watch?v=3ODxUKYQb3s
+https://www.youtube.com/watch?v=o6OeenofI4Y
 
-More tutorials: [setup](https://www.youtube.com/watch?v=O_y0m1p-JPs&list=PLAh6o0IpwSF0), [the block](https://www.youtube.com/watch?v=_0auk_TwemQ&list=PLAh6o0IpwSF0), [layouts and design](https://www.youtube.com/watch?v=WoDOvQ1i6Eg&list=PLAh6o0IpwSF0), [smart matching](https://www.youtube.com/watch?v=LyrI5lycqp0&list=PLAh6o0IpwSF0), [pages and WooCommerce](https://www.youtube.com/watch?v=9M8uoJ5U8rI&list=PLAh6o0IpwSF0) and [every setting explained](https://www.youtube.com/watch?v=CMvccEjL4Yg&list=PLAh6o0IpwSF0). Or watch the [whole playlist](https://www.youtube.com/playlist?list=PLAh6o0IpwSF0).
+More tutorials: [setup](https://www.youtube.com/watch?v=R-xA1pGK1fs&list=PLAh6o0IpwSF0), [the block](https://www.youtube.com/watch?v=6NUxNNt18gw&list=PLAh6o0IpwSF0), [layouts and design](https://www.youtube.com/watch?v=Buv0lGrZcr0&list=PLAh6o0IpwSF0), [smart matching](https://www.youtube.com/watch?v=LyrI5lycqp0&list=PLAh6o0IpwSF0), [pages and WooCommerce](https://www.youtube.com/watch?v=9M8uoJ5U8rI&list=PLAh6o0IpwSF0) and [every setting explained](https://www.youtube.com/watch?v=CMvccEjL4Yg&list=PLAh6o0IpwSF0). Or watch the [whole playlist](https://www.youtube.com/playlist?list=PLAh6o0IpwSF0).
 
 = Why choose SoftIcon Related Posts? =
 
@@ -31,7 +31,7 @@ More tutorials: [setup](https://www.youtube.com/watch?v=O_y0m1p-JPs&list=PLAh6o0
 * **You stay in control** – hand-pick related posts for any article; the remaining slots fill in automatically.
 * **Fast and lightweight** – built-in caching, responsive lazy-loaded images, and only one small stylesheet on the front end. No JavaScript on the front end.
 * **Looks like your site** – inherits your theme colors and fonts, including dark themes.
-* **Privacy friendly** – no tracking, no cookies, no external requests.
+* **Privacy friendly** – no visitor tracking and no cookies. The optional opt-in for update emails is off unless you allow it.
 
 = Smart related posts =
 
@@ -114,6 +114,17 @@ Copy `templates/posts.php` or `templates/category.php` into `yourtheme/softicon-
 * `alrp_video_urls` – tutorial video URLs shown on the settings page
 
 Settings page (JavaScript, `@wordpress/hooks`): `alrp.settings.tabs` adds tabs, `alrp.settings.layouts` and `alrp.settings.layoutArt` add layout tiles, `alrp.block.inspector` adds panels to the block sidebar.
+
+= Pro add-on =
+
+Everything above is free. **SoftIcon Related Posts Pro** is an optional add-on, available from Related Posts → Add-Ons in your dashboard, with:
+
+* "Read also" boxes inside articles and an "Up next" slide-in
+* Carousel, overlay, magazine and numbered layouts, design presets and custom CSS
+* Cookieless click analytics, plus "Popular" and "Trending" order
+* A Smart order with keyword matching, adjustable weights and cornerstone posts first
+* WooCommerce: smarter related products, product cards, "Shop this post"
+* Custom field and ACF rules, and a REST endpoint for headless sites
 
 = Feedback =
 
@@ -217,11 +228,12 @@ Yes. All text can be translated, and a translation template is included in the `
 
 = 1.7.0 =
 * New: Related posts stay in the current language on WPML and Polylang sites
-* Fix: WooCommerce products hidden from the catalog no longer appear in related lists (out of stock ones too, when the shop hides them)
-* New: Add-Ons page and optional opt-in for update emails (powered by Freemius, you can skip it)
-* New: Developer hooks to extend settings, placement, layouts, the settings page and the block sidebar
-* Improved: A layout from a deactivated add-on falls back to Grid instead of breaking the design
+* New: Add-Ons page and an optional opt-in for update emails (powered by Freemius, you can skip it)
+* New: Developer hooks to extend settings, placement, layouts, cards, the settings page and the block sidebar
+* Improved: The live preview loads its images before it switches, so changing the design no longer flashes empty boxes
+* Improved: A layout or order from a deactivated add-on falls back to the default instead of breaking the design, and comes back when the add-on returns
 * Improved: Settings that belong to a deactivated add-on are kept when you save
+* Fix: WooCommerce products hidden from the catalog no longer appear in related lists (out of stock ones too, when the shop hides them)
 
 = 1.6.1 =
 * Improved: The block sidebar uses the plugin's own lighter controls

@@ -8,11 +8,11 @@ Show readers what to read next. SoftIcon Related Posts finds posts that share ca
 
 ## Videos
 
-[![Watch the overview](https://img.youtube.com/vi/3ODxUKYQb3s/hqdefault.jpg)](https://www.youtube.com/watch?v=3ODxUKYQb3s&list=PLAh6o0IpwSF0)
+[![Watch the overview](https://img.youtube.com/vi/o6OeenofI4Y/hqdefault.jpg)](https://www.youtube.com/watch?v=o6OeenofI4Y&list=PLAh6o0IpwSF0)
 
 | | | |
 |---|---|---|
-| [Setup & settings](https://www.youtube.com/watch?v=O_y0m1p-JPs&list=PLAh6o0IpwSF0) | [The Related Posts block](https://www.youtube.com/watch?v=_0auk_TwemQ&list=PLAh6o0IpwSF0) | [Layouts & design](https://www.youtube.com/watch?v=WoDOvQ1i6Eg&list=PLAh6o0IpwSF0) |
+| [Setup & settings](https://www.youtube.com/watch?v=R-xA1pGK1fs&list=PLAh6o0IpwSF0) | [The Related Posts block](https://www.youtube.com/watch?v=6NUxNNt18gw&list=PLAh6o0IpwSF0) | [Layouts & design](https://www.youtube.com/watch?v=Buv0lGrZcr0&list=PLAh6o0IpwSF0) |
 | [Most relevant & hand-picked](https://www.youtube.com/watch?v=LyrI5lycqp0&list=PLAh6o0IpwSF0) | [Pages, products, widget & RSS](https://www.youtube.com/watch?v=9M8uoJ5U8rI&list=PLAh6o0IpwSF0) | [Every setting explained](https://www.youtube.com/watch?v=CMvccEjL4Yg&list=PLAh6o0IpwSF0) |
 
 [Whole playlist on YouTube](https://www.youtube.com/playlist?list=PLAh6o0IpwSF0)

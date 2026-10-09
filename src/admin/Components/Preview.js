@@ -3,6 +3,15 @@ import { useEffect, useState } from '@wordpress/element';
 import { Spinner } from '@wordpress/components';
 import apiFetch from '@wordpress/api-fetch';
 
+// Loads the new preview's images off-screen first (max 1.5s), so switching designs never flashes empty boxes.
+const withImages = html => {
+	const eager = html.replace(/\sloading="lazy"/g, '');
+	const box = document.createElement('div');
+	box.innerHTML = eager;
+	const images = [...box.querySelectorAll('img')].map(img => img.decode ? img.decode().catch(() => {}) : Promise.resolve());
+	return Promise.race([Promise.all(images), new Promise(done => setTimeout(done, 1500))]).then(() => eager);
+};
+
 // Renders the unsaved settings on the server, debounced so typing doesn't fire a request per key.
 const Preview = ({ settings }) => {
 	const [result, setResult] = useState(null);
@@ -13,6 +22,7 @@ const Preview = ({ settings }) => {
 		setLoading(true);
 		const timer = setTimeout(() => {
 			apiFetch({ path: '/alrp/v1/preview', method: 'POST', data: { settings } })
+				.then(res => res.html ? withImages(res.html).then(html => ({ ...res, html })) : res)
 				.then(res => !cancelled && setResult(res))
 				.catch(() => !cancelled && setResult({ html: '', error: true }))
 				.finally(() => !cancelled && setLoading(false));

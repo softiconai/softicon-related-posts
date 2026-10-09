@@ -125,6 +125,7 @@ function alrp_uninstall_cleanup() {
     delete_post_meta_by_key( '_alrp_hide' );
     delete_post_meta_by_key( '_alrp_manual_ids' );
     delete_option( 'alrp_cache_version' );
+    delete_option( 'widget_alrp_widget' );
     delete_transient( 'alrp_activation_redirect' );
 
     global $wpdb;

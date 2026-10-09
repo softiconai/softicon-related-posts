@@ -8,10 +8,10 @@ class videos {
     const PLAYLIST = 'https://www.youtube.com/playlist?list=PLAh6o0IpwSF0';
 
     const URLS = array(
-        'overview'   => 'https://www.youtube.com/watch?v=3ODxUKYQb3s&list=PLAh6o0IpwSF0',
-        'setup'      => 'https://www.youtube.com/watch?v=O_y0m1p-JPs&list=PLAh6o0IpwSF0',
-        'block'      => 'https://www.youtube.com/watch?v=_0auk_TwemQ&list=PLAh6o0IpwSF0',
-        'design'     => 'https://www.youtube.com/watch?v=WoDOvQ1i6Eg&list=PLAh6o0IpwSF0',
+        'overview'   => 'https://www.youtube.com/watch?v=o6OeenofI4Y&list=PLAh6o0IpwSF0',
+        'setup'      => 'https://www.youtube.com/watch?v=R-xA1pGK1fs&list=PLAh6o0IpwSF0',
+        'block'      => 'https://www.youtube.com/watch?v=6NUxNNt18gw&list=PLAh6o0IpwSF0',
+        'design'     => 'https://www.youtube.com/watch?v=Buv0lGrZcr0&list=PLAh6o0IpwSF0',
         'smart'      => 'https://www.youtube.com/watch?v=LyrI5lycqp0&list=PLAh6o0IpwSF0',
         'everywhere' => 'https://www.youtube.com/watch?v=9M8uoJ5U8rI&list=PLAh6o0IpwSF0',
         'settings'   => 'https://www.youtube.com/watch?v=CMvccEjL4Yg&list=PLAh6o0IpwSF0',

@@ -142,7 +142,7 @@ class get_category_show_posts {
         }
 
         // post_status drops hand-picked posts that are no longer published
-        return get_posts( array(
+        $args = array(
             'post_type'           => get_post_type( $post_id ),
             'post_status'         => 'publish',
             'post__in'            => $ids,
@@ -151,7 +151,30 @@ class get_category_show_posts {
             'ignore_sticky_posts' => true,
             'no_found_rows'       => true,
             'suppress_filters'    => false, // lets WPML and Polylang keep the current language
-        ) );
+        );
+        // the final check also covers IDs that add-ons add through alrp_related_post_ids
+        $hidden = self::hidden_products_clause( $args['post_type'] );
+        if ( $hidden ) {
+            $args['tax_query'] = array( $hidden ); // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query -- WooCommerce catalog visibility on a short post__in list
+        }
+        return get_posts( $args );
+    }
+
+    // WooCommerce: products hidden from the catalog, and out of stock ones when the shop hides them
+    private static function hidden_products_clause($post_type) {
+        if ( 'product' !== $post_type || ! taxonomy_exists( 'product_visibility' ) ) {
+            return null;
+        }
+        $hidden = array( 'exclude-from-catalog' );
+        if ( 'yes' === get_option( 'woocommerce_hide_out_of_stock_items' ) ) {
+            $hidden[] = 'outofstock';
+        }
+        return array(
+            'taxonomy' => 'product_visibility',
+            'field'    => 'name',
+            'terms'    => $hidden,
+            'operator' => 'NOT IN',
+        );
     }
 
     // cached, ordered pool of automatically related post IDs
@@ -221,21 +244,13 @@ class get_category_show_posts {
             $args['date_query'] = array( array( 'after' => $settings['max_age'] . ' months ago' ) );
         }
 
-        // WooCommerce: products hidden from the catalog (and out of stock ones when the shop hides them) stay out
-        if ( 'product' === $post_type && taxonomy_exists( 'product_visibility' ) ) {
-            $hidden = array( 'exclude-from-catalog' );
-            if ( 'yes' === get_option( 'woocommerce_hide_out_of_stock_items' ) ) {
-                $hidden[] = 'outofstock';
-            }
+        // keeps the pool full: hidden products would otherwise use up slots before the final check drops them
+        $hidden = self::hidden_products_clause( $post_type );
+        if ( $hidden ) {
             $args['tax_query'] = array( // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query -- same query, plus WooCommerce's catalog visibility
                 'relation' => 'AND',
                 $args['tax_query'],
-                array(
-                    'taxonomy' => 'product_visibility',
-                    'field'    => 'name',
-                    'terms'    => $hidden,
-                    'operator' => 'NOT IN',
-                ),
+                $hidden,
             );
         }
 

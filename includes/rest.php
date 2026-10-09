@@ -55,7 +55,17 @@ class rest {
 
         // keep values saved by add-ons that are not active right now, so turning Pro off and on loses nothing
         $saved = get_option( admin_settings::OPTION, array() );
-        $clean = $clean + array_diff_key( is_array($saved) ? $saved : array(), $clean );
+        $saved = is_array( $saved ) ? $saved : array();
+        $clean = $clean + array_diff_key( $saved, $clean );
+
+        // the same for choices an inactive add-on offered (e.g. a Pro layout): while the page shows the
+        // fallback default and the user didn't pick something else, the saved choice stays
+        $defaults = admin_settings::defaults();
+        foreach ( admin_settings::choices() as $key => $options ) {
+            if ( isset( $saved[ $key ] ) && ! isset( $options[ $saved[ $key ] ] ) && $clean[ $key ] === $defaults[ $key ] ) {
+                $clean[ $key ] = $saved[ $key ];
+            }
+        }
 
         update_option( admin_settings::OPTION, $clean );
         return rest_ensure_response( admin_settings::get() );
@@ -78,6 +88,10 @@ class rest {
         $best = 0;
         $most = 0;
         foreach ( $candidates as $post_id ) {
+            // a post whose related posts are switched off never shows them, so it can't be the example
+            if ( post_meta_box::is_hidden( $post_id ) ) {
+                continue;
+            }
             $count = count( $renderer->get_related_posts( $post_id, $settings ) );
             if ( $count > $most ) {
                 $best = $post_id;
