@@ -12,6 +12,7 @@ class videos {
         'design'     => '',
         'smart'      => '',
         'everywhere' => '',
+        'settings'   => '',
     );
 
     public function __construct()
@@ -27,6 +28,7 @@ class videos {
             'design'     => array( 'thumb' => '03-design', 'length' => '0:26', 'title' => __('Layouts & design', 'softicon-related-posts') ),
             'smart'      => array( 'thumb' => '04-smart', 'length' => '0:23', 'title' => __('Most relevant & hand-picked posts', 'softicon-related-posts') ),
             'everywhere' => array( 'thumb' => '05-everywhere', 'length' => '0:28', 'title' => __('Pages, products, widget & RSS', 'softicon-related-posts') ),
+            'settings'   => array( 'thumb' => '06-all-settings', 'length' => '2:19', 'title' => __('Every setting explained', 'softicon-related-posts') ),
         );
 
         $urls = apply_filters('alrp_video_urls', self::URLS);
