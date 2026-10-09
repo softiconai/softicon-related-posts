@@ -1,0 +1,286 @@
+$border: #e0e0e0;
+$muted: #757575;
+$accent: var(--wp-admin-theme-color, #3858e9);
+
+.alrp-settings-wrap {
+	margin: 0 20px 0 0;
+}
+
+.alrpSettings {
+	max-width: 1400px;
+	color: #1e1e1e;
+
+	h1,
+	h2 {
+		color: #1e1e1e;
+	}
+}
+
+.alrpHeader {
+	position: sticky;
+	top: 32px;
+	z-index: 20;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	margin: 0 -20px 24px -20px;
+	padding: 12px 20px;
+	background: #fff;
+	border-bottom: 1px solid $border;
+
+	@media (max-width: 782px) {
+		top: 46px;
+		flex-wrap: wrap;
+	}
+}
+
+.alrpHeaderTitle {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+
+	h1 {
+		margin: 0;
+		padding: 0;
+		font-size: 20px;
+		font-weight: 600;
+	}
+}
+
+.alrpHeaderIcon {
+	display: flex;
+	padding: 6px;
+	border-radius: 8px;
+	color: #fff;
+	background: linear-gradient(135deg, #4f46e5, #06b6d4);
+
+	svg {
+		width: 20px;
+		height: 20px;
+	}
+}
+
+.alrpVersion {
+	padding: 2px 8px;
+	border-radius: 20px;
+	background: #f0f0f0;
+	color: $muted;
+	font-size: 12px;
+}
+
+.alrpHeaderActions {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.alrpStatus {
+	color: $muted;
+	font-size: 13px;
+}
+
+.alrpSettingsBody {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(320px, 440px);
+	gap: 24px;
+	align-items: start;
+
+	@media (max-width: 1100px) {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}
+
+.alrpSettingsMain {
+	border-radius: 12px !important;
+	overflow: hidden;
+}
+
+.alrpTabs {
+	.components-tab-panel__tabs {
+		margin: -16px -24px 8px;
+		padding: 0 12px;
+		border-bottom: 1px solid $border;
+	}
+
+	.components-tab-panel__tabs-item {
+		height: 52px;
+		font-size: 14px;
+		font-weight: 500;
+
+		&.is-active {
+			box-shadow: inset 0 -3px 0 $accent;
+		}
+	}
+}
+
+.alrpSection {
+	padding: 20px 0;
+	border-bottom: 1px solid #f0f0f0;
+
+	&:last-child {
+		border-bottom: 0;
+	}
+
+	header {
+		margin-bottom: 16px;
+
+		h2 {
+			margin: 0;
+			font-size: 15px;
+			font-weight: 600;
+		}
+
+		p {
+			margin: 4px 0 0;
+			color: $muted;
+		}
+	}
+}
+
+.alrpFields {
+	display: grid;
+	gap: 20px;
+	max-width: 620px;
+
+	// components style some labels uppercase, keep every label the same
+	.components-base-control__label,
+	.components-input-control__label {
+		font-weight: 500 !important;
+		text-transform: none !important;
+		font-size: 13px !important;
+	}
+}
+
+.alrpChecks {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+
+	&.alrpChecksInline {
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: 8px 20px;
+	}
+
+	&.alrpChecksBox {
+		max-height: 200px;
+		overflow: auto;
+		padding: 12px;
+		border: 1px solid $border;
+		border-radius: 8px;
+	}
+}
+
+.alrpSegmented {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	margin-top: 8px;
+
+	.components-button {
+		border-radius: 6px;
+	}
+}
+
+.alrpMedia {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	margin-top: 8px;
+
+	img {
+		width: 72px;
+		height: 72px;
+		object-fit: cover;
+		border-radius: 8px;
+		border: 1px solid $border;
+	}
+}
+
+.alrpMediaActions {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.alrpColor {
+	padding: 0;
+}
+
+.alrpPreview {
+	position: sticky;
+	top: 110px;
+	padding: 16px;
+	background: #fff;
+	border: 1px solid $border;
+	border-radius: 12px;
+
+	@media (max-width: 1100px) {
+		position: static;
+	}
+}
+
+.alrpPreviewHead {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+
+	.components-spinner {
+		margin: 0 0 0 auto;
+	}
+}
+
+.alrpLiveDot {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: #22c55e;
+	box-shadow: 0 0 0 4px #22c55e33;
+}
+
+.alrpPreviewFor {
+	margin: 6px 0 12px;
+	color: $muted;
+}
+
+.alrpPreviewCanvas {
+	max-height: calc(100vh - 260px);
+	overflow: auto;
+	padding: 12px;
+	border-radius: 8px;
+	background: #fafafa;
+	transition: opacity 0.2s;
+
+	&.is-loading {
+		opacity: 0.55;
+	}
+
+	// the front end is a content column, scale it down so the chosen columns fit the sidebar
+	> div {
+		zoom: 0.8;
+	}
+
+	.alrp_wrapper {
+		margin: 0;
+	}
+
+	a {
+		pointer-events: none;
+	}
+}
+
+.alrpPreviewEmpty,
+.alrpPreviewNote {
+	margin: 12px 0 0;
+	color: $muted;
+	font-size: 12px;
+}
+
+.alrpSnackbars {
+	position: fixed;
+	bottom: 24px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 100;
+}

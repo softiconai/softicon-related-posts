@@ -5,8 +5,13 @@ import Label from '../../../../bpl-tools/Components/Label/Label';
 import '../../../../bpl-tools/Components/ColorControl/ColorControl.scss';
 
 // Same UI as bpl-tools ColorControl, imported directly so the bpl-tools index (and its code editor) stays out of the bundle.
-const ColorControl = ({ className = '', label, value = '', onChange }) => {
-	const themeColors = useSelect(select => select('core/block-editor').getSettings().colors || [], []);
+// palette: list of color strings, used outside the block editor where its store isn't loaded
+const ColorControl = ({ className = '', label, value = '', onChange, palette }) => {
+	const editorColors = useSelect(select => {
+		const store = palette ? null : select('core/block-editor');
+		return store ? store.getSettings().colors || [] : [];
+	}, [palette]);
+	const themeColors = palette ? palette.map(color => ({ color })) : editorColors;
 
 	return <PanelRow className={className}>
 		<Label className=''>{label}</Label>

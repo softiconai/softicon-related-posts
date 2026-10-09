@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-09T02:39:09+00:00\n"
+"POT-Creation-Date: 2026-10-09T03:09:46+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: softicon-related-posts\n"
@@ -34,361 +34,119 @@ msgstr ""
 msgid "https://github.com/omor45faruk"
 msgstr ""
 
-#: includes/admin_settings.php:27
+#: includes/admin_settings.php:26
+#: includes/admin_settings.php:125
 #: includes/admin_settings.php:126
-#: includes/admin_settings.php:127
 #: includes/post_meta_box.php:28
 #: includes/widget.php:23
 #: build/index.js:1
 msgid "Related Posts"
 msgstr ""
 
-#: includes/admin_settings.php:42
+#: includes/admin_settings.php:41
 msgid "Read More"
 msgstr ""
 
-#: includes/admin_settings.php:65
+#: includes/admin_settings.php:64
 msgid "After content"
 msgstr ""
 
-#: includes/admin_settings.php:66
+#: includes/admin_settings.php:65
 msgid "Before content"
 msgstr ""
 
-#: includes/admin_settings.php:67
+#: includes/admin_settings.php:66
 msgid "Manual (shortcode only)"
 msgstr ""
 
-#: includes/admin_settings.php:70
+#: includes/admin_settings.php:69
 msgid "Same category"
 msgstr ""
 
-#: includes/admin_settings.php:71
+#: includes/admin_settings.php:70
 msgid "Same tag"
 msgstr ""
 
-#: includes/admin_settings.php:72
+#: includes/admin_settings.php:71
 msgid "Same category or tag"
 msgstr ""
 
-#: includes/admin_settings.php:73
+#: includes/admin_settings.php:72
 msgid "Any shared taxonomy (for custom post types)"
 msgstr ""
 
-#: includes/admin_settings.php:76
+#: includes/admin_settings.php:75
 msgid "Grid"
 msgstr ""
 
-#: includes/admin_settings.php:77
+#: includes/admin_settings.php:76
 msgid "List (image left)"
 msgstr ""
 
-#: includes/admin_settings.php:78
+#: includes/admin_settings.php:77
 msgid "Minimal (titles only)"
 msgstr ""
 
-#: includes/admin_settings.php:81
+#: includes/admin_settings.php:80
 msgid "Fixed height (200px)"
 msgstr ""
 
-#: includes/admin_settings.php:85
+#: includes/admin_settings.php:84
 msgid "Square (1:1)"
 msgstr ""
 
-#: includes/admin_settings.php:88
+#: includes/admin_settings.php:87
 msgid "None"
 msgstr ""
 
-#: includes/admin_settings.php:89
+#: includes/admin_settings.php:88
 msgid "Border"
 msgstr ""
 
-#: includes/admin_settings.php:90
+#: includes/admin_settings.php:89
 msgid "Shadow"
 msgstr ""
 
-#: includes/admin_settings.php:93
+#: includes/admin_settings.php:92
 msgid "Random"
 msgstr ""
 
-#: includes/admin_settings.php:94
+#: includes/admin_settings.php:93
 msgid "Most relevant (most shared tags and categories)"
 msgstr ""
 
-#: includes/admin_settings.php:95
+#: includes/admin_settings.php:94
 msgid "Latest"
 msgstr ""
 
-#: includes/admin_settings.php:96
+#: includes/admin_settings.php:95
 msgid "Recently updated"
 msgstr ""
 
-#: includes/admin_settings.php:97
+#: includes/admin_settings.php:96
 msgid "Most commented"
 msgstr ""
 
-#: includes/admin_settings.php:98
+#: includes/admin_settings.php:97
 msgid "Title (A-Z)"
 msgstr ""
 
-#: includes/admin_settings.php:136
+#: includes/admin_settings.php:135
 msgid "Related Posts Settings"
 msgstr ""
 
-#: includes/admin_settings.php:136
-#: includes/admin_settings.php:152
+#: includes/admin_settings.php:135
+#: includes/admin_settings.php:151
 msgid "Settings"
 msgstr ""
 
-#: includes/admin_settings.php:138
-#: includes/admin_settings.php:400
+#: includes/admin_settings.php:137
+#: build/admin-settings.js:1
 msgid "Help & Videos"
 msgstr ""
 
-#: includes/admin_settings.php:163
-#: build/index.js:1
-msgid "General"
-msgstr ""
-
-#: includes/admin_settings.php:164
-msgid "Filters"
-msgstr ""
-
-#: includes/admin_settings.php:165
-#: build/index.js:1
-msgid "Display"
-msgstr ""
-
-#: includes/admin_settings.php:166
-msgid "Design"
-msgstr ""
-
-#: includes/admin_settings.php:171
-msgid "Enable"
-msgstr ""
-
-#: includes/admin_settings.php:171
-msgid "Show related posts on single posts"
-msgstr ""
-
-#: includes/admin_settings.php:172
-msgid "Post types"
-msgstr ""
-
-#: includes/admin_settings.php:172
-msgid "Pages usually have no categories or tags, so use hand-picked related posts there."
-msgstr ""
-
-#: includes/admin_settings.php:173
-msgid "Position"
-msgstr ""
-
-#: includes/admin_settings.php:174
-#: build/index.js:1
-msgid "Related by"
-msgstr ""
-
-#: includes/admin_settings.php:175
-#: build/index.js:1
-msgid "Order by"
-msgstr ""
-
-#: includes/admin_settings.php:176
-#: build/index.js:1
-msgid "Number of posts"
-msgstr ""
-
-#: includes/admin_settings.php:177
-msgid "RSS feed"
-msgstr ""
-
-#: includes/admin_settings.php:177
-msgid "Add related post links to items in your RSS feed"
-msgstr ""
-
-#: includes/admin_settings.php:180
-msgid "Exclude categories"
-msgstr ""
-
-#: includes/admin_settings.php:180
-msgid "Posts in these categories never appear as related posts."
-msgstr ""
-
-#: includes/admin_settings.php:181
-msgid "Exclude posts"
-msgstr ""
-
-#: includes/admin_settings.php:181
-msgid "Comma separated post IDs, e.g. 12, 45"
-msgstr ""
-
-#: includes/admin_settings.php:182
-msgid "Only posts from the last"
-msgstr ""
-
-#: includes/admin_settings.php:182
-msgid "Months. 0 shows posts of any age."
-msgstr ""
-
-#: includes/admin_settings.php:185
-#: build/index.js:1
-msgid "Section title"
-msgstr ""
-
-#: includes/admin_settings.php:186
-#: build/index.js:1
-msgid "Columns"
-msgstr ""
-
-#: includes/admin_settings.php:187
-#: templates/category.php:8
-msgid "Categories"
-msgstr ""
-
-#: includes/admin_settings.php:187
-msgid "Show current post categories above related posts"
-msgstr ""
-
-#: includes/admin_settings.php:188
-msgid "Image"
-msgstr ""
-
-#: includes/admin_settings.php:188
-#: build/index.js:1
-msgid "Show featured image"
-msgstr ""
-
-#: includes/admin_settings.php:189
-msgid "Image size"
-msgstr ""
-
-#: includes/admin_settings.php:190
-msgid "Fallback image"
-msgstr ""
-
-#: includes/admin_settings.php:190
-msgid "Used when a post has no featured image. Leave empty to show a placeholder."
-msgstr ""
-
-#: includes/admin_settings.php:191
-msgid "Excerpt"
-msgstr ""
-
-#: includes/admin_settings.php:191
-#: build/index.js:1
-msgid "Show excerpt"
-msgstr ""
-
-#: includes/admin_settings.php:192
-msgid "Excerpt length (words)"
-msgstr ""
-
-#: includes/admin_settings.php:193
-msgid "Date"
-msgstr ""
-
-#: includes/admin_settings.php:193
-#: build/index.js:1
-msgid "Show publish date"
-msgstr ""
-
-#: includes/admin_settings.php:194
-msgid "Author"
-msgstr ""
-
-#: includes/admin_settings.php:194
-msgid "Show author avatar and name"
-msgstr ""
-
-#: includes/admin_settings.php:195
-msgid "Read more"
-msgstr ""
-
-#: includes/admin_settings.php:195
-#: build/index.js:1
-msgid "Show read more link"
-msgstr ""
-
-#: includes/admin_settings.php:196
-msgid "Read more text"
-msgstr ""
-
-#: includes/admin_settings.php:199
-#: build/index.js:1
-msgid "Layout"
-msgstr ""
-
-#: includes/admin_settings.php:199
-msgid "Minimal shows only titles (and dates if enabled)."
-msgstr ""
-
-#: includes/admin_settings.php:200
-#: build/index.js:1
-msgid "Image ratio"
-msgstr ""
-
-#: includes/admin_settings.php:201
-#: build/index.js:1
-msgid "Card style"
-msgstr ""
-
-#: includes/admin_settings.php:202
-#: build/index.js:1
-msgid "Corner radius (px)"
-msgstr ""
-
-#: includes/admin_settings.php:203
-msgid "Hover effect"
-msgstr ""
-
-#: includes/admin_settings.php:203
-#: build/index.js:1
-msgid "Zoom image on hover"
-msgstr ""
-
-#: includes/admin_settings.php:204
-msgid "Title color"
-msgstr ""
-
-#: includes/admin_settings.php:205
-msgid "Text color"
-msgstr ""
-
-#: includes/admin_settings.php:206
-#: build/index.js:1
-msgid "Card background"
-msgstr ""
-
-#: includes/admin_settings.php:206
-#: build/index.js:1
-msgid "Leave colors empty to use your theme colors."
-msgstr ""
-
-#: includes/admin_settings.php:304
-msgid "Select image"
-msgstr ""
-
-#: includes/admin_settings.php:306
-#: includes/post_meta_box.php:37
-#: includes/post_meta_box.php:63
-msgid "Remove"
-msgstr ""
-
-#: includes/admin_settings.php:372
-msgid "Select fallback image"
-msgstr ""
-
-#: includes/admin_settings.php:373
-msgid "Use this image"
-msgstr ""
-
-#: includes/admin_settings.php:396
-#: includes/widget.php:12
-msgid "SoftIcon Related Posts"
-msgstr ""
-
-#: includes/admin_settings.php:399
-msgid "New here? Watch the short videos and see the shortcode and block options."
+#: includes/admin_settings.php:270
+msgid "The Related Posts settings need JavaScript."
 msgstr ""
 
 #: includes/help_page.php:38
@@ -457,6 +215,12 @@ msgstr ""
 msgid "Enjoying it? Leave a review"
 msgstr ""
 
+#: includes/post_meta_box.php:37
+#: includes/post_meta_box.php:63
+#: build/admin-settings.js:1
+msgid "Remove"
+msgstr ""
+
 #: includes/post_meta_box.php:38
 msgid "No posts found"
 msgstr ""
@@ -477,37 +241,46 @@ msgstr ""
 msgid "Search posts…"
 msgstr ""
 
-#: includes/videos.php:24
+#: includes/videos.php:25
 msgid "Overview: every feature in a minute"
 msgstr ""
 
-#: includes/videos.php:25
+#: includes/videos.php:26
 msgid "Setup & settings"
 msgstr ""
 
-#: includes/videos.php:26
+#: includes/videos.php:27
 msgid "The Related Posts block"
 msgstr ""
 
-#: includes/videos.php:27
+#: includes/videos.php:28
 msgid "Layouts & design"
 msgstr ""
 
-#: includes/videos.php:28
+#: includes/videos.php:29
 msgid "Most relevant & hand-picked posts"
 msgstr ""
 
-#: includes/videos.php:29
+#: includes/videos.php:30
 msgid "Pages, products, widget & RSS"
 msgstr ""
 
-#: includes/videos.php:46
-#: includes/videos.php:58
+#: includes/videos.php:31
+msgid "Every setting explained"
+msgstr ""
+
+#: includes/videos.php:48
+#: includes/videos.php:60
 msgid "Video tutorials"
 msgstr ""
 
-#: includes/videos.php:67
+#: includes/videos.php:69
 msgid "(opens in a new tab)"
+msgstr ""
+
+#: includes/widget.php:12
+#: build/admin-settings.js:1
+msgid "SoftIcon Related Posts"
 msgstr ""
 
 #: includes/widget.php:13
@@ -532,6 +305,317 @@ msgstr ""
 
 #: includes/widget.php:87
 msgid "Show date"
+msgstr ""
+
+#: templates/category.php:8
+msgid "Categories"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Unsaved changes"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "All changes saved"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Saving…"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Save Changes"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Live preview"
+msgstr ""
+
+#: build/admin-settings.js:1
+#, js-format
+msgid "Related posts for “%s”"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "The preview could not be loaded."
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "No related posts found with these settings yet."
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Your theme’s fonts and colors also apply on the site."
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Select fallback image"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Use this image"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Replace image"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Select image"
+msgstr ""
+
+#: build/admin-settings.js:1
+#: build/index.js:1
+msgid "Clear"
+msgstr ""
+
+#: build/admin-settings.js:1
+#: build/index.js:1
+msgid "General"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Where related posts appear"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Show related posts on single posts"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Post types"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Pages usually have no categories or tags, so use hand-picked related posts there."
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Position"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "How posts are matched"
+msgstr ""
+
+#: build/admin-settings.js:1
+#: build/index.js:1
+msgid "Related by"
+msgstr ""
+
+#: build/admin-settings.js:1
+#: build/index.js:1
+msgid "Order by"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Posts sharing more tags and categories come first. A shared tag counts twice."
+msgstr ""
+
+#: build/admin-settings.js:1
+#: build/index.js:1
+msgid "Number of posts"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "RSS feed"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Add related post links to items in your RSS feed"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Added to the full text of feed items."
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Filters"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Leave out"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Exclude categories"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Posts in these categories never appear as related posts."
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Exclude posts"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Comma separated post IDs, e.g. 12, 45"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Freshness"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Only posts from the last (months)"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "0 shows posts of any age."
+msgstr ""
+
+#: build/admin-settings.js:1
+#: build/index.js:1
+msgid "Display"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Heading and grid"
+msgstr ""
+
+#: build/admin-settings.js:1
+#: build/index.js:1
+msgid "Section title"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Leave empty to hide the heading."
+msgstr ""
+
+#: build/admin-settings.js:1
+#: build/index.js:1
+msgid "Columns"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Tablets and phones automatically use fewer."
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Show current post categories above related posts"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Image"
+msgstr ""
+
+#: build/admin-settings.js:1
+#: build/index.js:1
+msgid "Show featured image"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Image size"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Fallback image"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Used when a post has no featured image. Leave empty to show a placeholder."
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Card content"
+msgstr ""
+
+#: build/admin-settings.js:1
+#: build/index.js:1
+msgid "Show excerpt"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Excerpt length (words)"
+msgstr ""
+
+#: build/admin-settings.js:1
+#: build/index.js:1
+msgid "Show publish date"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Show author avatar and name"
+msgstr ""
+
+#: build/admin-settings.js:1
+#: build/index.js:1
+msgid "Show read more link"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Read more text"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Design"
+msgstr ""
+
+#: build/admin-settings.js:1
+#: build/index.js:1
+msgid "Layout"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Minimal shows only titles (and dates if enabled)."
+msgstr ""
+
+#: build/admin-settings.js:1
+#: build/index.js:1
+msgid "Image ratio"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Cards"
+msgstr ""
+
+#: build/admin-settings.js:1
+#: build/index.js:1
+msgid "Card style"
+msgstr ""
+
+#: build/admin-settings.js:1
+#: build/index.js:1
+msgid "Corner radius (px)"
+msgstr ""
+
+#: build/admin-settings.js:1
+#: build/index.js:1
+msgid "Zoom image on hover"
+msgstr ""
+
+#: build/admin-settings.js:1
+#: build/index.js:1
+msgid "Colors"
+msgstr ""
+
+#: build/admin-settings.js:1
+#: build/index.js:1
+msgid "Leave colors empty to use your theme colors."
+msgstr ""
+
+#: build/admin-settings.js:1
+#: build/index.js:1
+msgid "Title"
+msgstr ""
+
+#: build/admin-settings.js:1
+#: build/index.js:1
+msgid "Text"
+msgstr ""
+
+#: build/admin-settings.js:1
+#: build/index.js:1
+msgid "Card background"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Settings saved."
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Could not save the settings."
 msgstr ""
 
 #: build/index.js:1
@@ -559,23 +643,7 @@ msgid "Reset to settings page values"
 msgstr ""
 
 #: build/index.js:1
-msgid "Clear"
-msgstr ""
-
-#: build/index.js:1
 msgid "Card"
-msgstr ""
-
-#: build/index.js:1
-msgid "Colors"
-msgstr ""
-
-#: build/index.js:1
-msgid "Title"
-msgstr ""
-
-#: build/index.js:1
-msgid "Text"
 msgstr ""
 
 #: build/index.js:1

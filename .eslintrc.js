@@ -16,7 +16,8 @@ module.exports = {
 	],
 	globals: {
 		wp: 'readonly',
-		alrpBlockData: 'readonly'
+		alrpBlockData: 'readonly',
+		alrpSettingsData: 'readonly'
 	},
 	parserOptions: {
 		ecmaFeatures: {

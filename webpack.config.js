@@ -6,6 +6,10 @@ const plugins = defaultConfig.plugins.filter(p => !(Object.values(p).length === 
 
 module.exports = {
 	...defaultConfig,
+	entry: {
+		...defaultConfig.entry(),
+		'admin-settings': './src/admin/settings.js'
+	},
 	plugins: [
 		...plugins,
 		new ESLintPlugin()

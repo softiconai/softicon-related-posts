@@ -206,6 +206,7 @@ Yes. All text can be translated, and a translation template is included in the `
 * Security: Excerpts now go through WordPress' excerpt filters, so membership plugins can restrict them
 * Improved: Saving drafts no longer clears the related posts cache
 * Improved: Search results in "Pick related posts" close after you pick a post
+* New: Settings page rebuilt in React with a live preview that updates before you save, Cmd/Ctrl+S to save and a warning for unsaved changes
 * New: Related Posts menu in the admin sidebar with Settings and a Help & Videos page (old Settings → Related Posts links redirect)
 * Improved: Related Posts block rebuilt with General and Style tabs, plus title, text and card background colors
 
