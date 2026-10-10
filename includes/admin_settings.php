@@ -147,6 +147,8 @@ class admin_settings {
         $this->settings_hook = add_submenu_page( self::PAGE, __('Related Posts Settings', 'softicon-related-posts'), __('Settings', 'softicon-related-posts'), 'manage_options', self::PAGE, array( $this, 'render_page' ) );
 
         add_submenu_page( self::PAGE, __('Help & Videos', 'softicon-related-posts'), __('Help & Videos', 'softicon-related-posts'), 'manage_options', help_page::PAGE, array( 'ALRP_Related_Posts\help_page', 'render' ) );
+
+        add_submenu_page( self::PAGE, __('Pricing & Comparison', 'softicon-related-posts'), __('Pricing & Comparison', 'softicon-related-posts'), 'manage_options', pricing_page::PAGE, array( 'ALRP_Related_Posts\pricing_page', 'render' ) );
     }
 
     // settings lived under Settings → Related Posts before 1.6.0, keep old bookmarks working
@@ -263,12 +265,13 @@ class admin_settings {
             'helpUrl'    => self::url( help_page::PAGE ),
             'isPro'      => false,
             'proUrl'     => self::pro_url(),
+            'pricingUrl' => pricing_page::url( 'alrp-plans' ),
         ) );
     }
 
-    // Freemius lists the Pro add-on on its Add-Ons page
+    // every "Get Pro" link leads to the comparison and pricing page
     public static function pro_url() {
-        return function_exists('alrp_fs') ? alrp_fs()->get_addons_url() : '';
+        return pricing_page::url();
     }
 
     // hex from the settings page, rgb()/rgba() from the block's color picker

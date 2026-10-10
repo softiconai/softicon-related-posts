@@ -117,7 +117,7 @@ Settings page (JavaScript, `@wordpress/hooks`): `alrp.settings.tabs` adds tabs, 
 
 = Pro add-on =
 
-Everything above is free. **SoftIcon Related Posts Pro** is an optional add-on, available from Related Posts → Add-Ons in your dashboard, with:
+Everything above is free. **SoftIcon Related Posts Pro** is an optional add-on with a one-time price. See the full comparison and plans in Related Posts → Pricing & Comparison. Pro adds:
 
 * "Read also" boxes inside articles and an "Up next" slide-in
 * Carousel, overlay, magazine and numbered layouts, design presets and custom CSS
@@ -230,6 +230,7 @@ Yes. All text can be translated, and a translation template is included in the `
 
 = 1.7.0 =
 * New: Related posts stay in the current language on WPML and Polylang sites
+* New: Pricing & Comparison page: Free vs Pro feature table with a search filter, plans and FAQ
 * New: Add-Ons page and an optional opt-in for update emails (powered by Freemius, you can skip it)
 * New: Developer hooks to extend settings, placement, layouts, cards, the settings page and the block sidebar
 * Improved: The live preview loads its images before it switches, so changing the design no longer flashes empty boxes

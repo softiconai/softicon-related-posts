@@ -18,6 +18,11 @@ const Design = ({ settings, set, data }) => {
 		<Section icon='layout' title={__('Layout', 'softicon-related-posts')}>
 			<Tiles label={__('Layout', 'softicon-related-posts')} help={'minimal' === settings.layout ? __('Minimal shows only titles (and dates if enabled).', 'softicon-related-posts') : ''} value={settings.layout} options={layouts} art={layoutTiles} onChange={set('layout')} />
 
+			{!layouts.carousel && data.pricingUrl && <a className='alrpProHint' href={data.pricingUrl}>
+				<span className='alrpProTag'>PRO</span>
+				{__('Carousel, photo overlay, magazine and numbered layouts', 'softicon-related-posts')} &rarr;
+			</a>}
+
 			<Tiles label={__('Image ratio', 'softicon-related-posts')} help={'fixed' === settings.image_ratio ? __('Fixed keeps every image 200px tall.', 'softicon-related-posts') : ''} value={settings.image_ratio} options={ratios} art={ratioArt} onChange={set('image_ratio')} />
 		</Section>
 

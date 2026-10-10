@@ -93,6 +93,7 @@ class ALRP_Related_posts{
         require_once ALRP_PLUGIN_PATH . 'includes/widget.php';
         require_once ALRP_PLUGIN_PATH . 'includes/videos.php';
         require_once ALRP_PLUGIN_PATH . 'includes/help_page.php';
+        require_once ALRP_PLUGIN_PATH . 'includes/pricing_page.php';
         require_once ALRP_PLUGIN_PATH . 'includes/rest.php';
 
         new ALRP_Related_Posts\cache();
@@ -102,6 +103,7 @@ class ALRP_Related_posts{
         new ALRP_Related_Posts\block();
         new ALRP_Related_Posts\videos();
         new ALRP_Related_Posts\help_page();
+        new ALRP_Related_Posts\pricing_page();
         new ALRP_Related_Posts\rest();
         add_action( 'widgets_init', array( 'ALRP_Related_Posts\widget', 'register' ) );
 
