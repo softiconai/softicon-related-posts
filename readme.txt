@@ -126,6 +126,8 @@ Everything above is free. **SoftIcon Related Posts Pro** is an optional add-on, 
 * WooCommerce: smarter related products, product cards, "Shop this post"
 * Custom field and ACF rules, and a REST endpoint for headless sites
 
+Watch the [Pro overview](https://www.youtube.com/watch?v=l-0HL2yVyN8&list=PLAh6o0IpwSF0) or a tutorial for each Pro feature in the [playlist](https://www.youtube.com/playlist?list=PLAh6o0IpwSF0).
+
 = Feedback =
 
 Missing a feature? Found a bug? Please open a topic in the [support forum](https://wordpress.org/support/plugin/softicon-related-posts/) or an issue on [GitHub](https://github.com/softiconai/softicon-related-posts/issues). We read every message.
