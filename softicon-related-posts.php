@@ -19,7 +19,8 @@
 if ( !defined('ABSPATH') ) { exit; }
 
 if ( ! function_exists( 'alrp_fs' ) ) {
-    // Freemius SDK: optional usage opt-in and the Add-Ons page where the Pro add-on is offered
+    // Freemius SDK: optional usage opt-in, and the parent of the Pro add-on. No license or purchase screens
+    // in this plugin: the Add-Ons page is hidden and every "Get Pro" link opens the plugin's own Pricing page.
     function alrp_fs() {
         global $alrp_fs;
 
@@ -39,6 +40,7 @@ if ( ! function_exists( 'alrp_fs' ) ) {
                     'slug'       => 'alrp-settings',
                     'first-path' => 'admin.php?page=alrp-settings',
                     'account'    => false,
+                    'addons'     => false,
                     'contact'    => false,
                     'support'    => false,
                 ),

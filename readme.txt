@@ -209,7 +209,7 @@ Use the Design options in Related Posts → Settings or in the block sidebar. Fo
 
 The plugin never tracks your visitors and sets no cookies on your site.
 
-After activation, the plugin asks if you want to opt in to security and feature update emails and share basic, non-sensitive diagnostic data (WordPress, PHP and plugin versions, site URL and admin email) with us through [Freemius](https://freemius.com). It is entirely optional: click "Skip" and nothing is sent. The Add-Ons page loads its list of add-ons from Freemius. See the [Freemius privacy policy](https://freemius.com/privacy/).
+After activation, the plugin asks if you want to opt in to security and feature update emails and share basic, non-sensitive diagnostic data (WordPress, PHP and plugin versions, site URL and admin email) with us through [Freemius](https://freemius.com). It is entirely optional: click "Skip" and nothing is sent. See the [Freemius privacy policy](https://freemius.com/privacy/).
 
 = Is it translation ready? =
 
@@ -232,7 +232,7 @@ Yes. All text can be translated, and a translation template is included in the `
 * New: Related posts stay in the current language on WPML and Polylang sites
 * New: "Free vs Pro" page with a searchable feature table, and a "Pricing" page with plans and FAQ
 * New: Pro features are shown next to the free settings they extend, clearly marked "PRO", with a link to the plans
-* New: Add-Ons page and an optional opt-in for update emails (powered by Freemius, you can skip it)
+* New: Optional opt-in for update emails (powered by Freemius, you can skip it)
 * New: Developer hooks to extend settings, placement, layouts, cards, the settings page and the block sidebar
 * Improved: The live preview loads its images before it switches, so changing the design no longer flashes empty boxes
 * Improved: A layout or order from a deactivated add-on falls back to the default instead of breaking the design, and comes back when the add-on returns
@@ -302,7 +302,7 @@ Yes. All text can be translated, and a translation template is included in the `
 == Upgrade Notice ==
 
 = 1.7.0 =
-WPML and Polylang support, an Add-Ons page and new developer hooks. An optional opt-in screen appears once; you can skip it.
+WPML and Polylang support, Free vs Pro and Pricing pages, and new developer hooks. An optional opt-in screen appears once; you can skip it.
 
 = 1.6.1 =
 Lighter block editor controls. No changes to how related posts look on your site.
