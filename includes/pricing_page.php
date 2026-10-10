@@ -346,7 +346,7 @@ class pricing_page {
                 </details>
                 <details>
                     <summary><?php esc_html_e('How do I install Pro after buying?', 'softicon-related-posts'); ?></summary>
-                    <p><?php esc_html_e('You get an email with the download link and your license key. Upload the Pro plugin in Plugins → Add New, activate it next to this plugin, and enter the key.', 'softicon-related-posts'); ?></p>
+                    <p><?php esc_html_e('You get an email with the download link and your license key. Upload the Pro plugin in Plugins → Add New, activate it next to this plugin, then click "Activate License" under it in the Plugins list.', 'softicon-related-posts'); ?></p>
                 </details>
                 <details>
                     <summary><?php esc_html_e('Can I move my license to another site?', 'softicon-related-posts'); ?></summary>

@@ -23,8 +23,6 @@ const General = props => {
 	const { settings, set, data } = props;
 
 	return <>
-	<Slot name='general.top' {...props} />
-
 	<Section icon='visibility' title={__('Where related posts appear', 'softicon-related-posts')}>
 		<ToggleRow label={__('Show related posts automatically', 'softicon-related-posts')} help={__('Adds them to every single post of the chosen types.', 'softicon-related-posts')} checked={settings.enable} onChange={set('enable')} />
 
