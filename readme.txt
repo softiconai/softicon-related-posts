@@ -231,6 +231,7 @@ Yes. All text can be translated, and a translation template is included in the `
 = 1.7.0 =
 * New: Related posts stay in the current language on WPML and Polylang sites
 * New: "Free vs Pro" page with a searchable feature table, and a "Pricing" page with plans and FAQ
+* New: Pro features are shown next to the free settings they extend, clearly marked "PRO", with a link to the plans
 * New: Add-Ons page and an optional opt-in for update emails (powered by Freemius, you can skip it)
 * New: Developer hooks to extend settings, placement, layouts, cards, the settings page and the block sidebar
 * Improved: The live preview loads its images before it switches, so changing the design no longer flashes empty boxes

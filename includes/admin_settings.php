@@ -269,6 +269,7 @@ class admin_settings {
             'proUrl'     => self::pro_url(),
             'pricingUrl' => pricing_page::url(),
             'compareUrl' => pricing_page::compare_url(),
+            'woo'        => class_exists('WooCommerce'),
         ) );
     }
 

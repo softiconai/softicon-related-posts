@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-10T03:12:41+00:00\n"
+"POT-Creation-Date: 2026-10-10T03:19:53+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: softicon-related-posts\n"
@@ -156,7 +156,7 @@ msgstr ""
 msgid "Pricing"
 msgstr ""
 
-#: includes/admin_settings.php:299
+#: includes/admin_settings.php:300
 msgid "The Related Posts settings need JavaScript."
 msgstr ""
 
@@ -306,6 +306,7 @@ msgid "Yoast SEO and Rank Math cornerstone posts first"
 msgstr ""
 
 #: includes/pricing_page.php:48
+#: build/admin-settings.js:1
 msgid "Popular and Trending order"
 msgstr ""
 
@@ -351,7 +352,6 @@ msgid "Image ratio, cards, corners, hover zoom and colors"
 msgstr ""
 
 #: includes/pricing_page.php:61
-#: build/admin-settings.js:1
 msgid "Carousel, photo overlay, magazine and numbered layouts"
 msgstr ""
 
@@ -368,6 +368,7 @@ msgid "Click analytics without cookies (views, clicks, click rate)"
 msgstr ""
 
 #: includes/pricing_page.php:66
+#: build/admin-settings.js:1
 msgid "Internal link report: find posts nothing links to"
 msgstr ""
 
@@ -445,7 +446,6 @@ msgstr ""
 
 #: includes/pricing_page.php:219
 #: includes/pricing_page.php:244
-#: build/admin-settings.js:1
 msgid "Pro"
 msgstr ""
 
@@ -715,6 +715,150 @@ msgid "Your theme’s fonts and colors also apply on the site."
 msgstr ""
 
 #: build/admin-settings.js:1
+msgid "Unlock with Pro"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "\"Read also\" and \"Up next\""
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Related links inside the article, and a card that slides in as readers finish."
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Show \"Read also\" boxes between paragraphs"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Show the \"Up next\" slide-in"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Only show in chosen categories"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Hide the list on phones"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Smart matching"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Find related posts by topic, not only by tags."
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Smart order: shared keywords, tags, categories and freshness"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Choose how much each one counts"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Boost cornerstone content from Yoast SEO and Rank Math"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Match by custom fields and ACF (same city, similar price, upcoming events)"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "WooCommerce"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Smarter related products and links between products and articles."
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Smarter related products by brand, category, attributes and price"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Price, rating and Add to cart on product cards"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "\"Shop this post\" under blog posts"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Related articles on product pages"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Headless and apps"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Related posts as JSON, with your settings applied."
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "REST endpoint: /wp-json/alrp/v1/related/<id>"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Add related posts to the WordPress posts API"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "More on each card"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Show extra details under the title."
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Reading time (\"4 min read\")"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Custom and ACF fields, like city or price"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Design presets"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Start from a finished look in one click."
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Clean cards, Magazine, Photo overlay, Carousel and Top list"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Custom CSS"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Fine-tune the design with your own CSS."
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Applies to the list, \"Read also\" and \"Up next\""
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Smart: keywords, terms and freshness (Pro)"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Popular: most read in 30 days (Pro)"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Trending: most read in 7 days (Pro)"
+msgstr ""
+
+#: build/admin-settings.js:1
 msgid "Select fallback image"
 msgstr ""
 
@@ -736,67 +880,27 @@ msgid "Clear"
 msgstr ""
 
 #: build/admin-settings.js:1
-msgid "Do more with Pro"
+msgid "Post views"
 msgstr ""
 
 #: build/admin-settings.js:1
-msgid "An optional add-on. Everything you use today stays free."
+msgid "Related posts seen"
 msgstr ""
 
 #: build/admin-settings.js:1
-msgid "\"Read also\" and \"Up next\""
+msgid "Clicks"
 msgstr ""
 
 #: build/admin-settings.js:1
-msgid "Related links inside the article and a slide-in as readers finish."
+msgid "Click rate"
 msgstr ""
 
 #: build/admin-settings.js:1
-msgid "Carousel and more layouts"
+msgid "How related posts perform"
 msgstr ""
 
 #: build/admin-settings.js:1
-msgid "Carousel, photo overlay, magazine and numbered lists, plus presets."
-msgstr ""
-
-#: build/admin-settings.js:1
-msgid "Click analytics"
-msgstr ""
-
-#: build/admin-settings.js:1
-msgid "Views, clicks and click rate without cookies, Popular and Trending."
-msgstr ""
-
-#: build/admin-settings.js:1
-msgid "Smart matching"
-msgstr ""
-
-#: build/admin-settings.js:1
-msgid "Keyword matching, adjustable weights and cornerstone posts first."
-msgstr ""
-
-#: build/admin-settings.js:1
-msgid "WooCommerce"
-msgstr ""
-
-#: build/admin-settings.js:1
-msgid "Smarter related products, product cards and \"Shop this post\"."
-msgstr ""
-
-#: build/admin-settings.js:1
-msgid "Custom fields and REST"
-msgstr ""
-
-#: build/admin-settings.js:1
-msgid "ACF rules, fields on cards and JSON for headless sites."
-msgstr ""
-
-#: build/admin-settings.js:1
-msgid "See pricing"
-msgstr ""
-
-#: build/admin-settings.js:1
-msgid "Compare Free and Pro"
+msgid "Views, clicks and click rate for every placement, counted without cookies. Example data shown."
 msgstr ""
 
 #: build/admin-settings.js:1
@@ -1009,6 +1113,26 @@ msgid "Minimal shows only titles (and dates if enabled)."
 msgstr ""
 
 #: build/admin-settings.js:1
+msgid "More layouts"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Carousel"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Overlay"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Magazine"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Numbered"
+msgstr ""
+
+#: build/admin-settings.js:1
 #: build/index.js:1
 msgid "Image ratio"
 msgstr ""
@@ -1059,6 +1183,10 @@ msgstr ""
 #: build/admin-settings.js:1
 #: build/index.js:1
 msgid "Card background"
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "Analytics"
 msgstr ""
 
 #: build/admin-settings.js:1

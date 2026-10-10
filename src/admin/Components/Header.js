@@ -2,11 +2,12 @@ import { __ } from '@wordpress/i18n';
 import { Button } from '@wordpress/components';
 import { blockIcon } from '../../utils/icons';
 
-const Header = ({ isDirty, saving, save, version, helpUrl, proUrl }) => <div className='alrpHeader'>
+const Header = ({ isDirty, saving, save, version, helpUrl, proUrl, proActive }) => <div className='alrpHeader'>
 	<div className='alrpHeaderTitle'>
 		<span className='alrpHeaderIcon'>{blockIcon}</span>
 		<h1>{__('SoftIcon Related Posts', 'softicon-related-posts')}</h1>
 		{version && <span className='alrpVersion'>v{version}</span>}
+		{proActive && <span className='alrpProBadgeHead'>PRO</span>}
 	</div>
 
 	<div className='alrpHeaderActions'>

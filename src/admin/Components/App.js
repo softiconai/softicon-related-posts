@@ -9,7 +9,8 @@ import General from './Panels/General';
 import Filters from './Panels/Filters';
 import Display from './Panels/Display';
 import Design from './Panels/Design';
-import ProTeaser from './Panels/ProTeaser';
+import AnalyticsLocked from './Pro/AnalyticsLocked';
+import { isLicensed } from './Pro/slots';
 import Section from './Panels/Section';
 import ToggleRow from './Fields/ToggleRow';
 import Tiles from './Fields/Tiles';
@@ -41,8 +42,8 @@ const App = () => {
 	const panelProps = useMemo(() => ({ settings, set, data, ui }), [settings, set]);
 
 	// Add-ons add tabs as { name, title, className, Panel }; Panel gets the same props as the built-in panels.
-	// without the Pro add-on a "Pro" tab shows what it adds; with it, the add-on brings its own tab
-	const tabs = useMemo(() => applyFilters('alrp.settings.tabs', data.isPro ? baseTabs : [...baseTabs, { name: 'pro', title: __('Pro', 'softicon-related-posts'), className: 'alrpTab-pro', Panel: ProTeaser }], data), []);
+	// without an active Pro license the Analytics tab is a locked preview; Pro replaces it with the real one
+	const tabs = useMemo(() => applyFilters('alrp.settings.tabs', isLicensed(data) ? baseTabs : [...baseTabs, { name: 'analytics', title: __('Analytics', 'softicon-related-posts'), className: 'alrpTab-analytics', Panel: AnalyticsLocked }], data), []);
 
 	const notify = (content, status = 'success') => setNotices(list => [...list, { id: Date.now(), content, status }]);
 
@@ -84,7 +85,7 @@ const App = () => {
 	}, [isDirty]);
 
 	return <div className='alrpSettings'>
-		<Header {...{ isDirty, saving, save, version: data.version, helpUrl: data.helpUrl, proUrl: data.isPro ? '' : data.proUrl }} />
+		<Header {...{ isDirty, saving, save, version: data.version, helpUrl: data.helpUrl, proUrl: isLicensed(data) ? '' : data.proUrl, proActive: isLicensed(data) }} />
 
 		<div className='alrpSettingsBody'>
 			<Card className='alrpSettingsMain'>

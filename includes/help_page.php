@@ -78,6 +78,8 @@ class help_page {
             </div>
 
             <?php videos::render(); ?>
+
+            <?php do_action('alrp_help_after_videos'); ?>
         </div>
         <?php
     }

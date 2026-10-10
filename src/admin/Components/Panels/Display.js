@@ -3,8 +3,10 @@ import { RangeControl, SelectControl, TextControl } from '@wordpress/components'
 import Section from './Section';
 import ToggleRow from '../Fields/ToggleRow';
 import MediaField from '../Fields/MediaField';
+import { Slot } from '../Pro/slots';
 
-const Display = ({ settings, set, data }) => {
+const Display = props => {
+	const { settings, set, data } = props;
 	const sizes = (data.imageSizes || []).map(size => ({ value: size, label: size }));
 
 	return <>
@@ -37,6 +39,8 @@ const Display = ({ settings, set, data }) => {
 
 			{!!settings.show_read_more && <TextControl label={__('Read more text', 'softicon-related-posts')} value={settings.read_more_text} onChange={set('read_more_text')} __nextHasNoMarginBottom />}
 		</Section>
+
+		<Slot name='display.fields' {...props} />
 	</>;
 };
 
