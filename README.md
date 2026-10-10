@@ -13,7 +13,7 @@ Show readers what to read next. SoftIcon Related Posts finds posts that share ca
 | | | |
 |---|---|---|
 | [Setup & settings](https://www.youtube.com/watch?v=R-xA1pGK1fs&list=PLAh6o0IpwSF0) | [The Related Posts block](https://www.youtube.com/watch?v=6NUxNNt18gw&list=PLAh6o0IpwSF0) | [Layouts & design](https://www.youtube.com/watch?v=Buv0lGrZcr0&list=PLAh6o0IpwSF0) |
-| [Most relevant & hand-picked](https://www.youtube.com/watch?v=LyrI5lycqp0&list=PLAh6o0IpwSF0) | [Pages, products, widget & RSS](https://www.youtube.com/watch?v=9M8uoJ5U8rI&list=PLAh6o0IpwSF0) | [Every setting explained](https://www.youtube.com/watch?v=CMvccEjL4Yg&list=PLAh6o0IpwSF0) |
+| [Most relevant & hand-picked](https://www.youtube.com/watch?v=nUhTlZZ_DGs&list=PLAh6o0IpwSF0) | [Pages, products, widget & RSS](https://www.youtube.com/watch?v=67lySyPLc8c&list=PLAh6o0IpwSF0) | [Every setting explained](https://www.youtube.com/watch?v=I3gz7TikIoc&list=PLAh6o0IpwSF0) |
 
 [Whole playlist on YouTube](https://www.youtube.com/playlist?list=PLAh6o0IpwSF0)
 

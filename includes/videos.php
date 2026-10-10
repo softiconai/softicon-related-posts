@@ -12,9 +12,9 @@ class videos {
         'setup'      => 'https://www.youtube.com/watch?v=R-xA1pGK1fs&list=PLAh6o0IpwSF0',
         'block'      => 'https://www.youtube.com/watch?v=6NUxNNt18gw&list=PLAh6o0IpwSF0',
         'design'     => 'https://www.youtube.com/watch?v=Buv0lGrZcr0&list=PLAh6o0IpwSF0',
-        'smart'      => 'https://www.youtube.com/watch?v=LyrI5lycqp0&list=PLAh6o0IpwSF0',
-        'everywhere' => 'https://www.youtube.com/watch?v=9M8uoJ5U8rI&list=PLAh6o0IpwSF0',
-        'settings'   => 'https://www.youtube.com/watch?v=CMvccEjL4Yg&list=PLAh6o0IpwSF0',
+        'smart'      => 'https://www.youtube.com/watch?v=nUhTlZZ_DGs&list=PLAh6o0IpwSF0',
+        'everywhere' => 'https://www.youtube.com/watch?v=67lySyPLc8c&list=PLAh6o0IpwSF0',
+        'settings'   => 'https://www.youtube.com/watch?v=I3gz7TikIoc&list=PLAh6o0IpwSF0',
     );
 
     public function __construct()
