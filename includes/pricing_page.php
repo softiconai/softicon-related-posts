@@ -2,10 +2,11 @@
 namespace ALRP_Related_Posts;
 if ( !defined('ABSPATH') ) { exit;}
 
-// Free vs Pro comparison and Pro pricing; buttons open the Freemius checkout in a new tab
+// Two pages: "Free vs Pro" (comparison) and "Pricing" (plans); buy buttons open the Freemius checkout in a new tab
 class pricing_page {
 
     const PAGE     = 'alrp-pricing';
+    const COMPARE  = 'alrp-compare';
     const CHECKOUT = 'https://checkout.freemius.com/plugin/41135/?billing_cycle=lifetime&licenses=';
 
     public function __construct()
@@ -13,8 +14,12 @@ class pricing_page {
         add_action('admin_enqueue_scripts', array( $this, 'enqueue_assets' ));
     }
 
-    public static function url($anchor = '') {
-        return admin_settings::url( self::PAGE ) . ( $anchor ? '#' . $anchor : '' );
+    public static function url() {
+        return admin_settings::url( self::PAGE );
+    }
+
+    public static function compare_url() {
+        return admin_settings::url( self::COMPARE );
     }
 
     // the Pro add-on reports its license here, so the page can say Pro is already active
@@ -71,7 +76,7 @@ class pricing_page {
     }
 
     public function enqueue_assets($hook) {
-        if ( false !== strpos( $hook, self::PAGE ) ) {
+        if ( false !== strpos( $hook, self::PAGE ) || false !== strpos( $hook, self::COMPARE ) ) {
             wp_add_inline_style('wp-admin', self::styles());
             wp_add_inline_script('common', self::script());
         }
@@ -162,10 +167,13 @@ class pricing_page {
 .alrp-faq summary::after{content:"\f347";font-family:dashicons;color:#64748b}
 .alrp-faq details[open] summary::after{content:"\f343";color:#4f46e5}
 .alrp-faq details p{margin:0;padding:0 20px 16px;color:#475569;line-height:1.6}
+.alrp-more{margin:0 0 30px;text-align:center}
+.alrp-more .alrp-cta{display:inline-flex;width:auto;padding:13px 28px}
+.alrp-active{display:flex;align-items:center;justify-content:center;gap:8px;max-width:720px;margin:0 auto 28px;padding:12px 16px;border:1px solid #bbf7d0;border-radius:10px;background:#f0fdf4;color:#166534;font-weight:600}
 @media (max-width:782px){.alrp-plan.is-featured{transform:none}.alrp-compare th,.alrp-compare td{padding:11px 14px}}';
     }
 
-    public static function render() {
+    public static function render_compare() {
         if ( ! current_user_can('manage_options') ) {
             return;
         }
@@ -180,10 +188,9 @@ class pricing_page {
         }
         $check = '<span class="alrp-check" aria-label="' . esc_attr__('Included', 'softicon-related-posts') . '">&#10003;</span>';
         $dash  = '<span class="alrp-dash" aria-label="' . esc_attr__('Not included', 'softicon-related-posts') . '">&ndash;</span>';
-        $new   = ' <span class="screen-reader-text">' . esc_html__('(opens in a new tab)', 'softicon-related-posts') . '</span>';
         ?>
         <div class="wrap alrp-pricing">
-            <h1 class="screen-reader-text"><?php esc_html_e('Pricing & comparison', 'softicon-related-posts'); ?></h1>
+            <h1 class="screen-reader-text"><?php esc_html_e('Free vs Pro', 'softicon-related-posts'); ?></h1>
 
             <div class="alrp-head">
                 <span class="alrp-eyebrow"><?php esc_html_e('COMPARE', 'softicon-related-posts'); ?></span>
@@ -215,7 +222,7 @@ class pricing_page {
                     <?php if ( $active ) : ?>
                         <span class="alrp-cta is-have"><span class="dashicons dashicons-yes" aria-hidden="true"></span><?php esc_html_e('Active on this site', 'softicon-related-posts'); ?></span>
                     <?php else : ?>
-                        <a class="alrp-cta is-white" href="#alrp-plans"><?php esc_html_e('Get Pro', 'softicon-related-posts'); ?> &rarr;</a>
+                        <a class="alrp-cta is-white" href="<?php echo esc_url( self::url() ); ?>"><?php esc_html_e('Get Pro', 'softicon-related-posts'); ?> &rarr;</a>
                     <?php endif; ?>
                 </div>
             </div>
@@ -246,7 +253,7 @@ class pricing_page {
                                         <?php if ( $row[1] ) : ?>
                                             <?php echo esc_html( $row[0] ); ?>
                                         <?php else : ?>
-                                            <a class="alrp-pro-feature" href="#alrp-plans"><?php echo esc_html( $row[0] ); ?><span class="alrp-pro-tag">PRO</span></a>
+                                            <a class="alrp-pro-feature" href="<?php echo esc_url( self::url() ); ?>"><?php echo esc_html( $row[0] ); ?><span class="alrp-pro-tag">PRO</span></a>
                                         <?php endif; ?>
                                     </td>
                                     <td class="alrp-col"><?php echo $row[1] ? $check : $dash; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- built and escaped above ?></td>
@@ -259,13 +266,34 @@ class pricing_page {
                 <p id="alrp-filter-empty" class="alrp-empty" hidden><?php esc_html_e('No feature matches your search.', 'softicon-related-posts'); ?></p>
             </div>
 
-            <div id="alrp-plans" class="alrp-head">
+            <p class="alrp-more"><a class="alrp-cta is-solid" href="<?php echo esc_url( self::url() ); ?>"><?php esc_html_e('See Pro plans and pricing', 'softicon-related-posts'); ?> &rarr;</a></p>
+        </div>
+        <?php
+    }
+
+    public static function render() {
+        if ( ! current_user_can('manage_options') ) {
+            return;
+        }
+        $active   = self::pro_active();
+        $plans    = self::plans();
+        $features = self::features();
+        $new      = ' <span class="screen-reader-text">' . esc_html__('(opens in a new tab)', 'softicon-related-posts') . '</span>';
+        ?>
+        <div class="wrap alrp-pricing">
+            <h1 class="screen-reader-text"><?php esc_html_e('Pricing', 'softicon-related-posts'); ?></h1>
+
+            <div class="alrp-head">
                 <span class="alrp-eyebrow"><?php esc_html_e('PRICING', 'softicon-related-posts'); ?></span>
                 <h2><?php esc_html_e('Pick the plan that fits your sites', 'softicon-related-posts'); ?></h2>
                 <p><?php esc_html_e('Every plan has every Pro feature. Just choose how many websites you need. Pay once, use it forever.', 'softicon-related-posts'); ?></p>
             </div>
 
-            <div class="alrp-plans">
+            <?php if ( $active ) : ?>
+                <p class="alrp-active"><span class="dashicons dashicons-yes-alt" aria-hidden="true"></span><?php esc_html_e('Pro is active on this site. Thank you! Need it on more sites? Pick a bigger plan below.', 'softicon-related-posts'); ?></p>
+            <?php endif; ?>
+
+            <div id="alrp-plans" class="alrp-plans">
                 <?php foreach ( $plans as $plan ) : ?>
                     <div class="alrp-plan<?php echo $plan['featured'] ? ' is-featured' : ''; ?>">
                         <?php if ( $plan['featured'] ) : ?>

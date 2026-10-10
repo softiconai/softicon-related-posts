@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-10T03:09:32+00:00\n"
+"POT-Creation-Date: 2026-10-10T03:12:41+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: softicon-related-posts\n"
@@ -137,7 +137,7 @@ msgid "Related Posts Settings"
 msgstr ""
 
 #: includes/admin_settings.php:147
-#: includes/admin_settings.php:165
+#: includes/admin_settings.php:167
 msgid "Settings"
 msgstr ""
 
@@ -147,10 +147,16 @@ msgid "Help & Videos"
 msgstr ""
 
 #: includes/admin_settings.php:151
-msgid "Pricing & Comparison"
+#: includes/pricing_page.php:193
+msgid "Free vs Pro"
 msgstr ""
 
-#: includes/admin_settings.php:296
+#: includes/admin_settings.php:153
+#: includes/pricing_page.php:284
+msgid "Pricing"
+msgstr ""
+
+#: includes/admin_settings.php:299
 msgid "The Related Posts settings need JavaScript."
 msgstr ""
 
@@ -205,7 +211,7 @@ msgid "Need more help?"
 msgstr ""
 
 #: includes/help_page.php:73
-#: includes/pricing_page.php:306
+#: includes/pricing_page.php:334
 msgid "Frequently asked questions"
 msgstr ""
 
@@ -247,353 +253,357 @@ msgstr ""
 msgid "Search posts…"
 msgstr ""
 
-#: includes/pricing_page.php:27
+#: includes/pricing_page.php:32
 msgid "Single site"
 msgstr ""
 
-#: includes/pricing_page.php:27
+#: includes/pricing_page.php:32
 msgid "For your own website"
 msgstr ""
 
-#: includes/pricing_page.php:28
+#: includes/pricing_page.php:33
 msgid "3 sites"
 msgstr ""
 
-#: includes/pricing_page.php:28
+#: includes/pricing_page.php:33
 msgid "For freelancers and small studios"
 msgstr ""
 
-#: includes/pricing_page.php:29
+#: includes/pricing_page.php:34
 msgid "Unlimited sites"
 msgstr ""
 
-#: includes/pricing_page.php:29
+#: includes/pricing_page.php:34
 msgid "For agencies: every site you build"
 msgstr ""
 
-#: includes/pricing_page.php:36
+#: includes/pricing_page.php:41
 msgid "Related posts"
 msgstr ""
 
-#: includes/pricing_page.php:37
+#: includes/pricing_page.php:42
 msgid "Automatic related posts below every article"
 msgstr ""
 
-#: includes/pricing_page.php:38
+#: includes/pricing_page.php:43
 msgid "Match by category, tag or any taxonomy"
 msgstr ""
 
-#: includes/pricing_page.php:39
+#: includes/pricing_page.php:44
 msgid "\"Most relevant\" order and hand-picked posts"
 msgstr ""
 
-#: includes/pricing_page.php:40
+#: includes/pricing_page.php:45
 msgid "Exclude categories, posts and older posts"
 msgstr ""
 
-#: includes/pricing_page.php:41
+#: includes/pricing_page.php:46
 msgid "Smart order: keywords, tags, freshness and adjustable weights"
 msgstr ""
 
-#: includes/pricing_page.php:42
+#: includes/pricing_page.php:47
 msgid "Yoast SEO and Rank Math cornerstone posts first"
 msgstr ""
 
-#: includes/pricing_page.php:43
+#: includes/pricing_page.php:48
 msgid "Popular and Trending order"
 msgstr ""
 
-#: includes/pricing_page.php:44
+#: includes/pricing_page.php:49
 msgid "Custom field and ACF rules (same city, similar price, upcoming events)"
 msgstr ""
 
-#: includes/pricing_page.php:46
+#: includes/pricing_page.php:51
 msgid "Placement"
 msgstr ""
 
-#: includes/pricing_page.php:47
+#: includes/pricing_page.php:52
 msgid "After or before the content, block, shortcode and widget"
 msgstr ""
 
-#: includes/pricing_page.php:48
+#: includes/pricing_page.php:53
 msgid "Pages, custom post types and WooCommerce products"
 msgstr ""
 
-#: includes/pricing_page.php:49
+#: includes/pricing_page.php:54
 msgid "\"Read also\" boxes inside the article"
 msgstr ""
 
-#: includes/pricing_page.php:50
+#: includes/pricing_page.php:55
 msgid "\"Up next\" slide-in as readers finish"
 msgstr ""
 
-#: includes/pricing_page.php:51
+#: includes/pricing_page.php:56
 msgid "Display rules: only in chosen categories, hide on phones"
 msgstr ""
 
-#: includes/pricing_page.php:53
+#: includes/pricing_page.php:58
 #: build/admin-settings.js:1
 msgid "Design"
 msgstr ""
 
-#: includes/pricing_page.php:54
+#: includes/pricing_page.php:59
 msgid "Grid, list and minimal layouts"
 msgstr ""
 
-#: includes/pricing_page.php:55
+#: includes/pricing_page.php:60
 msgid "Image ratio, cards, corners, hover zoom and colors"
 msgstr ""
 
-#: includes/pricing_page.php:56
+#: includes/pricing_page.php:61
 #: build/admin-settings.js:1
 msgid "Carousel, photo overlay, magazine and numbered layouts"
 msgstr ""
 
-#: includes/pricing_page.php:57
+#: includes/pricing_page.php:62
 msgid "One-click design presets and custom CSS"
 msgstr ""
 
-#: includes/pricing_page.php:59
+#: includes/pricing_page.php:64
 msgid "Insights and stores"
 msgstr ""
 
-#: includes/pricing_page.php:60
+#: includes/pricing_page.php:65
 msgid "Click analytics without cookies (views, clicks, click rate)"
 msgstr ""
 
-#: includes/pricing_page.php:61
+#: includes/pricing_page.php:66
 msgid "Internal link report: find posts nothing links to"
 msgstr ""
 
-#: includes/pricing_page.php:62
+#: includes/pricing_page.php:67
 msgid "WooCommerce: smarter related products with price and add to cart"
 msgstr ""
 
-#: includes/pricing_page.php:63
+#: includes/pricing_page.php:68
 msgid "\"Shop this post\" and blog posts on product pages"
 msgstr ""
 
-#: includes/pricing_page.php:64
+#: includes/pricing_page.php:69
 msgid "REST API for headless sites and apps"
 msgstr ""
 
-#: includes/pricing_page.php:66
+#: includes/pricing_page.php:71
 msgid "Support"
 msgstr ""
 
-#: includes/pricing_page.php:67
+#: includes/pricing_page.php:72
 msgid "Updates"
 msgstr ""
 
-#: includes/pricing_page.php:68
-#: includes/pricing_page.php:300
+#: includes/pricing_page.php:73
+#: includes/pricing_page.php:328
 msgid "Priority support"
 msgstr ""
 
-#: includes/pricing_page.php:181
+#: includes/pricing_page.php:189
 msgid "Included"
 msgstr ""
 
-#: includes/pricing_page.php:182
+#: includes/pricing_page.php:190
 msgid "Not included"
 msgstr ""
 
-#: includes/pricing_page.php:183
-#: includes/videos.php:72
-msgid "(opens in a new tab)"
-msgstr ""
-
-#: includes/pricing_page.php:186
-msgid "Pricing & comparison"
-msgstr ""
-
-#: includes/pricing_page.php:189
+#: includes/pricing_page.php:196
 msgid "COMPARE"
 msgstr ""
 
-#: includes/pricing_page.php:190
+#: includes/pricing_page.php:197
 msgid "Free vs Pro at a glance"
 msgstr ""
 
 #. translators: %s: number of Pro-only features
-#: includes/pricing_page.php:195
+#: includes/pricing_page.php:202
 #, php-format
 msgid "See exactly what Pro adds. %s features are exclusive to Pro."
 msgstr ""
 
-#: includes/pricing_page.php:204
+#: includes/pricing_page.php:211
 msgid "FREE"
 msgstr ""
 
-#: includes/pricing_page.php:205
-#: includes/pricing_page.php:236
+#: includes/pricing_page.php:212
+#: includes/pricing_page.php:243
 msgid "Free"
 msgstr ""
 
-#: includes/pricing_page.php:206
+#: includes/pricing_page.php:213
 msgid "Free forever: smart related posts, the block, layouts and design options."
 msgstr ""
 
-#: includes/pricing_page.php:207
+#: includes/pricing_page.php:214
 msgid "forever"
 msgstr ""
 
-#: includes/pricing_page.php:208
+#: includes/pricing_page.php:215
 msgid "You already have it"
 msgstr ""
 
-#: includes/pricing_page.php:211
+#: includes/pricing_page.php:218
 msgid "PRO"
 msgstr ""
 
-#: includes/pricing_page.php:212
-#: includes/pricing_page.php:237
+#: includes/pricing_page.php:219
+#: includes/pricing_page.php:244
 #: build/admin-settings.js:1
 msgid "Pro"
 msgstr ""
 
-#: includes/pricing_page.php:213
+#: includes/pricing_page.php:220
 msgid "Everything in Free, plus new placements, layouts, analytics, smarter matching and priority support."
 msgstr ""
 
-#: includes/pricing_page.php:214
+#: includes/pricing_page.php:221
 msgid "from"
 msgstr ""
 
-#: includes/pricing_page.php:214
+#: includes/pricing_page.php:221
 msgid "one-time"
 msgstr ""
 
-#: includes/pricing_page.php:216
+#: includes/pricing_page.php:223
 msgid "Active on this site"
 msgstr ""
 
-#: includes/pricing_page.php:218
+#: includes/pricing_page.php:225
 #: build/admin-settings.js:1
 msgid "Get Pro"
 msgstr ""
 
-#: includes/pricing_page.php:225
+#: includes/pricing_page.php:232
 msgid "Feature breakdown"
 msgstr ""
 
-#: includes/pricing_page.php:227
+#: includes/pricing_page.php:234
 msgid "Filter features"
 msgstr ""
 
-#: includes/pricing_page.php:229
+#: includes/pricing_page.php:236
 msgid "Filter features…"
 msgstr ""
 
-#: includes/pricing_page.php:235
+#: includes/pricing_page.php:242
 msgid "Feature"
 msgstr ""
 
-#: includes/pricing_page.php:259
+#: includes/pricing_page.php:266
 msgid "No feature matches your search."
 msgstr ""
 
-#: includes/pricing_page.php:263
+#: includes/pricing_page.php:269
+msgid "See Pro plans and pricing"
+msgstr ""
+
+#: includes/pricing_page.php:281
+#: includes/videos.php:72
+msgid "(opens in a new tab)"
+msgstr ""
+
+#: includes/pricing_page.php:287
 msgid "PRICING"
 msgstr ""
 
-#: includes/pricing_page.php:264
+#: includes/pricing_page.php:288
 msgid "Pick the plan that fits your sites"
 msgstr ""
 
-#: includes/pricing_page.php:265
+#: includes/pricing_page.php:289
 msgid "Every plan has every Pro feature. Just choose how many websites you need. Pay once, use it forever."
 msgstr ""
 
-#: includes/pricing_page.php:272
-msgid "MOST POPULAR"
-msgstr ""
-
-#: includes/pricing_page.php:277
-msgid "One-time payment, lifetime updates."
-msgstr ""
-
-#: includes/pricing_page.php:278
-msgid "Buy now"
-msgstr ""
-
-#: includes/pricing_page.php:284
-msgid "SAME ON EVERY PLAN"
-msgstr ""
-
-#: includes/pricing_page.php:285
-msgid "Everything you get, on every license"
-msgstr ""
-
-#: includes/pricing_page.php:286
-msgid "The only difference between the plans is how many websites you can activate Pro on."
-msgstr ""
-
-#: includes/pricing_page.php:299
-msgid "Lifetime updates"
-msgstr ""
-
-#: includes/pricing_page.php:299
-msgid "On every plan"
+#: includes/pricing_page.php:293
+msgid "Pro is active on this site. Thank you! Need it on more sites? Pick a bigger plan below."
 msgstr ""
 
 #: includes/pricing_page.php:300
-msgid "Help when you need it"
+msgid "MOST POPULAR"
 msgstr ""
 
-#: includes/pricing_page.php:301
-msgid "Staging sites are free"
+#: includes/pricing_page.php:305
+msgid "One-time payment, lifetime updates."
 msgstr ""
 
-#: includes/pricing_page.php:301
-msgid "Local and staging don’t count"
-msgstr ""
-
-#: includes/pricing_page.php:302
-msgid "Secure checkout"
-msgstr ""
-
-#: includes/pricing_page.php:302
-msgid "Powered by Freemius"
-msgstr ""
-
-#: includes/pricing_page.php:308
-msgid "Do I keep the free features?"
-msgstr ""
-
-#: includes/pricing_page.php:309
-msgid "Yes. Pro is an add-on: the free plugin keeps working exactly as before, and Pro adds its features on top."
+#: includes/pricing_page.php:306
+msgid "Buy now"
 msgstr ""
 
 #: includes/pricing_page.php:312
-msgid "Is it really a one-time payment?"
+msgid "SAME ON EVERY PLAN"
 msgstr ""
 
 #: includes/pricing_page.php:313
+msgid "Everything you get, on every license"
+msgstr ""
+
+#: includes/pricing_page.php:314
+msgid "The only difference between the plans is how many websites you can activate Pro on."
+msgstr ""
+
+#: includes/pricing_page.php:327
+msgid "Lifetime updates"
+msgstr ""
+
+#: includes/pricing_page.php:327
+msgid "On every plan"
+msgstr ""
+
+#: includes/pricing_page.php:328
+msgid "Help when you need it"
+msgstr ""
+
+#: includes/pricing_page.php:329
+msgid "Staging sites are free"
+msgstr ""
+
+#: includes/pricing_page.php:329
+msgid "Local and staging don’t count"
+msgstr ""
+
+#: includes/pricing_page.php:330
+msgid "Secure checkout"
+msgstr ""
+
+#: includes/pricing_page.php:330
+msgid "Powered by Freemius"
+msgstr ""
+
+#: includes/pricing_page.php:336
+msgid "Do I keep the free features?"
+msgstr ""
+
+#: includes/pricing_page.php:337
+msgid "Yes. Pro is an add-on: the free plugin keeps working exactly as before, and Pro adds its features on top."
+msgstr ""
+
+#: includes/pricing_page.php:340
+msgid "Is it really a one-time payment?"
+msgstr ""
+
+#: includes/pricing_page.php:341
 msgid "Yes. A lifetime license includes every future update. There is no subscription to cancel."
 msgstr ""
 
-#: includes/pricing_page.php:316
+#: includes/pricing_page.php:344
 msgid "Can I upgrade to more sites later?"
 msgstr ""
 
-#: includes/pricing_page.php:317
+#: includes/pricing_page.php:345
 msgid "Yes. Buy a bigger plan any time from your account; contact us and we will help with the difference."
 msgstr ""
 
-#: includes/pricing_page.php:320
+#: includes/pricing_page.php:348
 msgid "How do I install Pro after buying?"
 msgstr ""
 
-#: includes/pricing_page.php:321
+#: includes/pricing_page.php:349
 msgid "You get an email with the download link and your license key. Upload the Pro plugin in Plugins → Add New, activate it next to this plugin, and enter the key."
 msgstr ""
 
-#: includes/pricing_page.php:324
+#: includes/pricing_page.php:352
 msgid "Can I move my license to another site?"
 msgstr ""
 
-#: includes/pricing_page.php:325
+#: includes/pricing_page.php:353
 msgid "Yes. Deactivate the license on the old site and activate it on the new one."
 msgstr ""
 
@@ -779,6 +789,10 @@ msgstr ""
 
 #: build/admin-settings.js:1
 msgid "ACF rules, fields on cards and JSON for headless sites."
+msgstr ""
+
+#: build/admin-settings.js:1
+msgid "See pricing"
 msgstr ""
 
 #: build/admin-settings.js:1

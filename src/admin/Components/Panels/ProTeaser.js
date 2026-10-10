@@ -20,7 +20,10 @@ const ProTeaser = ({ data }) => <Section icon='star-filled' title={__('Do more w
 			<span>{f.text}</span>
 		</a>)}
 	</div>
-	<a className='components-button is-primary alrpTeaserCta' href={data.proUrl}>{__('Compare Free and Pro', 'softicon-related-posts')}</a>
+	<div className='alrpTeaserActions'>
+		<a className='components-button is-primary' href={data.pricingUrl}>{__('See pricing', 'softicon-related-posts')}</a>
+		<a className='components-button is-secondary' href={data.compareUrl}>{__('Compare Free and Pro', 'softicon-related-posts')}</a>
+	</div>
 </Section>;
 
 export default ProTeaser;

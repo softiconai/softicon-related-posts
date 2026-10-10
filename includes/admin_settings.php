@@ -148,7 +148,9 @@ class admin_settings {
 
         add_submenu_page( self::PAGE, __('Help & Videos', 'softicon-related-posts'), __('Help & Videos', 'softicon-related-posts'), 'manage_options', help_page::PAGE, array( 'ALRP_Related_Posts\help_page', 'render' ) );
 
-        add_submenu_page( self::PAGE, __('Pricing & Comparison', 'softicon-related-posts'), __('Pricing & Comparison', 'softicon-related-posts'), 'manage_options', pricing_page::PAGE, array( 'ALRP_Related_Posts\pricing_page', 'render' ) );
+        add_submenu_page( self::PAGE, __('Free vs Pro', 'softicon-related-posts'), __('Free vs Pro', 'softicon-related-posts'), 'manage_options', pricing_page::COMPARE, array( 'ALRP_Related_Posts\pricing_page', 'render_compare' ) );
+
+        add_submenu_page( self::PAGE, __('Pricing', 'softicon-related-posts'), __('Pricing', 'softicon-related-posts'), 'manage_options', pricing_page::PAGE, array( 'ALRP_Related_Posts\pricing_page', 'render' ) );
     }
 
     // settings lived under Settings → Related Posts before 1.6.0, keep old bookmarks working
@@ -265,11 +267,12 @@ class admin_settings {
             'helpUrl'    => self::url( help_page::PAGE ),
             'isPro'      => false,
             'proUrl'     => self::pro_url(),
-            'pricingUrl' => pricing_page::url( 'alrp-plans' ),
+            'pricingUrl' => pricing_page::url(),
+            'compareUrl' => pricing_page::compare_url(),
         ) );
     }
 
-    // every "Get Pro" link leads to the comparison and pricing page
+    // every "Get Pro" link leads to the pricing page
     public static function pro_url() {
         return pricing_page::url();
     }

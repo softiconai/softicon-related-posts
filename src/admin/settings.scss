@@ -538,6 +538,7 @@ $accent: var(--wp-admin-theme-color, #3858e9);
 	background: linear-gradient(135deg, #eef2ff, #ecfeff);
 }
 
-.alrpTeaserCta {
-	justify-self: start;
+.alrpTeaserActions {
+	display: flex;
+	gap: 8px;
 }
