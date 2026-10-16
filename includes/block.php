@@ -44,6 +44,11 @@ class block {
                 'cardBg'         => $settings['card_bg'],
             ),
             'choices'  => admin_settings::choices(),
+            // the upgrade notice in the block sidebar; the Pricing page needs manage_options
+            'pro'      => array(
+                'active'     => pricing_page::pro_active(),
+                'pricingUrl' => current_user_can( 'manage_options' ) ? pricing_page::url() : '',
+            ),
         );
 
         wp_add_inline_script( $handle, 'window.alrpBlockData = ' . wp_json_encode( $data ) . ';', 'before' );

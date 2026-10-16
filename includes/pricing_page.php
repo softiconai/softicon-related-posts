@@ -2,12 +2,16 @@
 namespace ALRP_Related_Posts;
 if ( !defined('ABSPATH') ) { exit;}
 
-// Two pages: "Free vs Pro" (comparison) and "Pricing" (plans); buy buttons open the Freemius checkout in a new tab
+// Two pages: "Free vs Pro" (comparison) and "Pricing" (plans); buy buttons open the Freemius checkout in a modal (a new tab without JS)
 class pricing_page {
 
     const PAGE     = 'alrp-pricing';
     const COMPARE  = 'alrp-compare';
     const CHECKOUT = 'https://checkout.freemius.com/plugin/41135/?billing_cycle=lifetime&licenses=';
+
+    // SoftIcon Related Posts Pro on Freemius; the public key is meant for the browser
+    const PRODUCT_ID = '41135';
+    const PUBLIC_KEY = 'pk_392c749d98ea034395c6c56cfe55f';
 
     public function __construct()
     {
@@ -80,6 +84,14 @@ class pricing_page {
             wp_add_inline_style('wp-admin', self::styles());
             wp_add_inline_script('common', self::script());
         }
+
+        // the checkout modal, only where the Buy now buttons are
+        $asset_file = ALRP_PLUGIN_PATH . 'build/admin-pricing.asset.php';
+        if ( false !== strpos( $hook, self::PAGE ) && file_exists( $asset_file ) ) {
+            $asset = include $asset_file;
+            wp_enqueue_script( 'alrp-pricing', ALRP_PLUGIN_URL . 'build/admin-pricing.js', $asset['dependencies'], $asset['version'], true );
+            wp_add_inline_script( 'alrp-pricing', 'window.alrpCheckout = ' . wp_json_encode( array( 'productId' => self::PRODUCT_ID, 'publicKey' => self::PUBLIC_KEY, 'title' => __('SoftIcon Related Posts Pro', 'softicon-related-posts') ) ) . ';', 'before' );
+        }
     }
 
 
@@ -90,6 +102,7 @@ class pricing_page {
 
     private static function styles() {
         return '.alrp-pricing{max-width:1120px;margin:10px auto 40px;padding-right:20px;color:#1e1b4b}
+.alrp-thanks{display:flex;gap:10px;align-items:flex-start;max-width:760px;margin:0 auto 24px;padding:14px 18px;border:1px solid #86efac;border-left:4px solid #16a34a;border-radius:8px;background:#f0fdf4}.alrp-thanks[hidden]{display:none}.alrp-thanks .dashicons{color:#16a34a}.alrp-thanks p{margin:0;font-size:14px;line-height:1.55}
 .alrp-pricing .screen-reader-text{position:absolute}
 .alrp-eyebrow{display:inline-block;margin-bottom:10px;padding:4px 10px;border-radius:4px;background:#eef2ff;color:#4f46e5;font-size:12px;font-weight:700;letter-spacing:.08em}
 .alrp-eyebrow.is-green{background:#dcfce7;color:#166534}
@@ -153,7 +166,7 @@ class pricing_page {
 .alrp-every ul{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0 28px;margin:0;text-align:left}
 .alrp-every li{display:flex;align-items:flex-start;gap:10px;margin:0;padding:11px 0;border-bottom:1px dashed #e2e8f0}
 .alrp-every li .alrp-check{flex-shrink:0;width:22px;height:22px;font-size:13px}
-.alrp-trust{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:40px;padding:20px 24px;border:1px solid #e2e8f0;border-radius:14px;background:#fff}
+.alrp-trust{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:40px;padding:20px 24px;border:1px solid #e2e8f0;border-radius:14px;background:#fff}
 .alrp-trust div{display:flex;align-items:center;gap:12px}
 .alrp-trust .dashicons{display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:8px;background:#eef2ff;color:#4f46e5;font-size:20px}
 .alrp-trust strong{display:block;font-size:14px}
@@ -293,6 +306,11 @@ class pricing_page {
                 <p class="alrp-active"><span class="dashicons dashicons-yes-alt" aria-hidden="true"></span><?php esc_html_e('Pro is active on this site. Thank you! Need it on more sites? Pick a bigger plan below.', 'softicon-related-posts'); ?></p>
             <?php endif; ?>
 
+            <div id="alrp-thanks" class="alrp-thanks" role="status" hidden>
+                <span class="dashicons dashicons-yes-alt" aria-hidden="true"></span>
+                <p><strong><?php esc_html_e('Thank you for buying Pro!', 'softicon-related-posts'); ?></strong> <?php esc_html_e('Your license key and the Pro download link are on their way to your email. Install SoftIcon Related Posts Pro from Plugins → Add New → Upload Plugin, then click "Activate License" under it on the Plugins screen.', 'softicon-related-posts'); ?></p>
+            </div>
+
             <div id="alrp-plans" class="alrp-plans">
                 <?php foreach ( $plans as $plan ) : ?>
                     <div class="alrp-plan<?php echo $plan['featured'] ? ' is-featured' : ''; ?>">
@@ -303,7 +321,7 @@ class pricing_page {
                         <span class="alrp-for"><?php echo esc_html( $plan['for'] ); ?></span>
                         <p class="alrp-price"><sup>$</sup><b><?php echo esc_html( $plan['price'] ); ?></b></p>
                         <p class="alrp-plan-note"><?php esc_html_e('One-time payment, lifetime updates.', 'softicon-related-posts'); ?></p>
-                        <a class="alrp-cta <?php echo $plan['featured'] ? 'is-white' : 'is-solid'; ?>" href="<?php echo esc_url( self::CHECKOUT . rawurlencode( $plan['licenses'] ) ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e('Buy now', 'softicon-related-posts'); ?> &rarr;<?php echo $new; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped above ?></a>
+                        <a class="alrp-cta <?php echo $plan['featured'] ? 'is-white' : 'is-solid'; ?>" href="<?php echo esc_url( self::CHECKOUT . rawurlencode( $plan['licenses'] ) ); ?>" target="_blank" rel="noopener noreferrer" data-alrp-licenses="<?php echo esc_attr( $plan['licenses'] ); ?>"><?php esc_html_e('Buy now', 'softicon-related-posts'); ?> &rarr;<?php echo $new; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped above ?></a>
                     </div>
                 <?php endforeach; ?>
             </div>
@@ -324,6 +342,7 @@ class pricing_page {
             </div>
 
             <div class="alrp-trust">
+                <div><span class="dashicons dashicons-shield" aria-hidden="true"></span><p><strong><?php esc_html_e('14-day money-back guarantee', 'softicon-related-posts'); ?></strong><span class="alrp-sub"><?php esc_html_e('If we can’t fix a problem, you get a refund', 'softicon-related-posts'); ?></span></p></div>
                 <div><span class="dashicons dashicons-update" aria-hidden="true"></span><p><strong><?php esc_html_e('Lifetime updates', 'softicon-related-posts'); ?></strong><span class="alrp-sub"><?php esc_html_e('On every plan', 'softicon-related-posts'); ?></span></p></div>
                 <div><span class="dashicons dashicons-format-chat" aria-hidden="true"></span><p><strong><?php esc_html_e('Priority support', 'softicon-related-posts'); ?></strong><span class="alrp-sub"><?php esc_html_e('Help when you need it', 'softicon-related-posts'); ?></span></p></div>
                 <div><span class="dashicons dashicons-admin-site-alt3" aria-hidden="true"></span><p><strong><?php esc_html_e('Staging sites are free', 'softicon-related-posts'); ?></strong><span class="alrp-sub"><?php esc_html_e('Local and staging don’t count', 'softicon-related-posts'); ?></span></p></div>
@@ -339,6 +358,10 @@ class pricing_page {
                 <details>
                     <summary><?php esc_html_e('Is it really a one-time payment?', 'softicon-related-posts'); ?></summary>
                     <p><?php esc_html_e('Yes. A lifetime license includes every future update. There is no subscription to cancel.', 'softicon-related-posts'); ?></p>
+                </details>
+                <details>
+                    <summary><?php esc_html_e('Do you offer refunds?', 'softicon-related-posts'); ?></summary>
+                    <p><?php esc_html_e('Yes. If Pro has a bug or a problem that we can’t resolve within 14 days of your purchase, contact us and we will refund you in full.', 'softicon-related-posts'); ?></p>
                 </details>
                 <details>
                     <summary><?php esc_html_e('Can I upgrade to more sites later?', 'softicon-related-posts'); ?></summary>

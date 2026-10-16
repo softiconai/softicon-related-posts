@@ -7,6 +7,7 @@ import ToggleRow from '../Fields/ToggleRow';
 import { layoutArt, ratioArt, cardArt, proLayoutArt } from '../Fields/illustrations';
 import ColorControl from '../../../Components/Panel/ColorControl';
 import { Slot } from '../Pro/slots';
+import ProNotice from '../../../Components/ProNotice';
 
 const Design = props => {
 	const { settings, set, data } = props;
@@ -28,6 +29,8 @@ const Design = props => {
 						<span className='alrpTileLabel'>{label}<span className='dashicons dashicons-lock' aria-hidden='true' /></span>
 					</a>)}
 				</div>
+
+				<ProNotice url={data.pricingUrl} text={__('Carousel, Overlay, Magazine and Numbered layouts are available in Pro.', 'softicon-related-posts')} />
 			</div>}
 
 			<Tiles label={__('Image ratio', 'softicon-related-posts')} help={'fixed' === settings.image_ratio ? __('Fixed keeps every image 200px tall.', 'softicon-related-posts') : ''} value={settings.image_ratio} options={ratios} art={ratioArt} onChange={set('image_ratio')} />

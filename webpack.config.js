@@ -8,7 +8,8 @@ module.exports = {
 	...defaultConfig,
 	entry: {
 		...defaultConfig.entry(),
-		'admin-settings': './src/admin/settings.js'
+		'admin-settings': './src/admin/settings.js',
+		'admin-pricing': './src/admin/pricing.js'
 	},
 	plugins: [
 		...plugins,

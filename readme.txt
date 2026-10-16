@@ -211,6 +211,8 @@ The plugin never tracks your visitors and sets no cookies on your site.
 
 After activation, the plugin asks if you want to opt in to security and feature update emails and share basic, non-sensitive diagnostic data (WordPress, PHP and plugin versions, site URL and admin email) with us through [Freemius](https://freemius.com). It is entirely optional: click "Skip" and nothing is sent. See the [Freemius privacy policy](https://freemius.com/privacy/).
 
+The Pricing page (Related Posts → Pricing) opens the Freemius checkout only when you click "Buy now". The checkout loads from checkout.freemius.com, and what you type there (name, email, payment details) goes to Freemius, our reseller, to complete the purchase. Nothing is sent before you click. See the [Freemius terms](https://freemius.com/terms/) and [privacy policy](https://freemius.com/privacy/).
+
 = Is it translation ready? =
 
 Yes. All text can be translated, and a translation template is included in the `languages` folder.

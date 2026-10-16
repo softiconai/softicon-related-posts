@@ -1,10 +1,11 @@
 import { __ } from '@wordpress/i18n';
 import { Button, PanelBody, RangeControl, SelectControl, ToggleControl } from '@wordpress/components';
 import ColorControl from '../../../Panel/ColorControl';
+import ProNotice from '../../../ProNotice';
 import { blockData, getValue, toOptions } from '../../../../utils/functions';
 
 const Style = ({ attributes, setAttributes }) => {
-	const { choices } = blockData();
+	const { choices, pro } = blockData();
 	const value = key => getValue(attributes, key);
 	const set = key => val => setAttributes({ [key]: val });
 
@@ -13,6 +14,10 @@ const Style = ({ attributes, setAttributes }) => {
 			<SelectControl label={__('Layout', 'softicon-related-posts')} value={value('layout')} options={toOptions(choices.layout)} onChange={set('layout')} __nextHasNoMarginBottom />
 
 			<SelectControl className='alrpMt' label={__('Image ratio', 'softicon-related-posts')} value={value('imageRatio')} options={toOptions(choices.image_ratio)} onChange={set('imageRatio')} __nextHasNoMarginBottom />
+
+			{/* new tab, so the post being edited stays open */}
+			{pro && !pro.active && pro.pricingUrl && <ProNotice compact newTab url={pro.pricingUrl}
+				text={__('Carousel, Overlay, Magazine and Numbered layouts, and Smart, Popular and Trending order are available in Pro.', 'softicon-related-posts')} />}
 		</PanelBody>
 
 		<PanelBody title={__('Card', 'softicon-related-posts')} initialOpen={false}>

@@ -1,0 +1,61 @@
+// Locked Pro features: a notice, then the upgrade button under it.
+.alrpProNotice {
+	position: relative;
+	z-index: 2;
+	display: grid;
+	justify-items: start;
+	gap: 12px;
+	margin-top: 4px;
+	padding: 14px 16px;
+	border: 1px solid #c7d2fe;
+	border-left: 4px solid #4f46e5;
+	border-radius: 8px;
+	background: #eef2ff;
+
+	.alrpProNoticeText {
+		display: flex;
+		align-items: flex-start;
+		gap: 8px;
+		margin: 0;
+		color: #1e1b4b;
+		font-size: 13px;
+		line-height: 1.5;
+	}
+
+	strong {
+		font-weight: 600;
+	}
+
+	.dashicons {
+		flex: none;
+		width: 18px;
+		height: 18px;
+		color: #4f46e5;
+		font-size: 18px;
+	}
+
+	.alrpProButton.components-button {
+		height: auto;
+		padding: 7px 16px;
+		border: 0;
+		border-radius: 6px;
+		background: linear-gradient(135deg, #4f46e5, #06b6d4);
+		font-weight: 600;
+
+		&:hover:not(:disabled),
+		&:focus:not(:disabled) {
+			color: #fff;
+			background: linear-gradient(135deg, #4338ca, #0891b2);
+		}
+	}
+
+	// block sidebar
+	&.is-compact {
+		margin-top: 16px;
+		padding: 12px;
+
+		.alrpProNoticeText {
+			font-size: 12px;
+		}
+	}
+}

@@ -514,26 +514,6 @@ $accent: var(--wp-admin-theme-color, #3858e9);
 	cursor: pointer;
 }
 
-.alrpProUnlock {
-	position: absolute;
-	top: 20px;
-	right: 0;
-	z-index: 2;
-	padding: 5px 14px;
-	border-radius: 20px;
-	color: #fff;
-	background: linear-gradient(135deg, #4f46e5, #06b6d4);
-	font-size: 12px;
-	font-weight: 600;
-	text-decoration: none;
-
-	&:hover,
-	&:focus {
-		color: #fff;
-		opacity: 0.92;
-	}
-}
-
 .alrpProTiles {
 	display: grid;
 	gap: 8px;
