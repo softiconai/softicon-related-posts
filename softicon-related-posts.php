@@ -3,11 +3,11 @@
 * 
 * Plugin Name: SoftIcon Related Posts – Similar Posts & Internal Linking
 * Description: Displays related posts based on categories or tags to enhance engagement and navigation.
-* Version: 1.7.0
+* Version: 1.7.1
 * Requires at least: 6.3
 * Requires PHP: 7.1
-* Author: Al Amin
-* Author URI: https://profiles.wordpress.org/alamincmt/
+* Author: softiconai
+* Author URI: https://profiles.wordpress.org/softiconai/
 * License: GPLv3
 * License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 * Text Domain: softicon-related-posts
@@ -78,7 +78,7 @@ class ALRP_Related_posts{
     }
 
     public function defined_constants() {
-        define('ALRP_PLUGIN_VERSION', '1.7.0');
+        define('ALRP_PLUGIN_VERSION', '1.7.1');
         define('ALRP_PLUGIN_PATH', plugin_dir_path(__FILE__));
         define('ALRP_PLUGIN_URL', plugin_dir_url(__FILE__));
         define('ALRP_PLUGIN_ASSETS', plugin_dir_url(__FILE__) . 'assets/');
@@ -97,6 +97,7 @@ class ALRP_Related_posts{
         require_once ALRP_PLUGIN_PATH . 'includes/help_page.php';
         require_once ALRP_PLUGIN_PATH . 'includes/pricing_page.php';
         require_once ALRP_PLUGIN_PATH . 'includes/rest.php';
+        require_once ALRP_PLUGIN_PATH . 'includes/onboarding.php';
 
         new ALRP_Related_Posts\cache();
         new ALRP_Related_Posts\admin_settings();
@@ -107,6 +108,7 @@ class ALRP_Related_posts{
         new ALRP_Related_Posts\help_page();
         new ALRP_Related_Posts\pricing_page();
         new ALRP_Related_Posts\rest();
+        new ALRP_Related_Posts\onboarding();
         add_action( 'widgets_init', array( 'ALRP_Related_Posts\widget', 'register' ) );
 
         // add-ons such as SoftIcon Related Posts Pro hook in here
@@ -122,6 +124,7 @@ class ALRP_Related_posts{
     }
 }
 ALRP_Related_posts::get_instance();
+register_activation_hook( __FILE__, array( 'ALRP_Related_Posts\onboarding', 'activate' ) );
 
 // Freemius runs this on uninstall, so it can also record the uninstall reason
 function alrp_uninstall_cleanup() {
@@ -130,7 +133,8 @@ function alrp_uninstall_cleanup() {
     delete_post_meta_by_key( '_alrp_manual_ids' );
     delete_option( 'alrp_cache_version' );
     delete_option( 'widget_alrp_widget' );
-    delete_transient( 'alrp_activation_redirect' );
+    delete_option( 'alrp_optin_choice' );
+    delete_transient( 'alrp_onboarding' );
 
     global $wpdb;
     // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- one-off cleanup of this plugin's transients, no API lists them by prefix

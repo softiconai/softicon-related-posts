@@ -1,10 +1,10 @@
 === SoftIcon Related Posts – Similar Posts & Internal Linking ===
-Contributors: alamincmt
+Contributors: softiconai
 Tags: related posts, similar posts, internal links, related content, gutenberg
 Requires at least: 6.3
 Tested up to: 7.1
 Requires PHP: 7.1
-Stable tag: 1.7.0
+Stable tag: 1.7.1
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -230,6 +230,11 @@ Yes. All text can be translated, and a translation template is included in the `
 
 == Changelog ==
 
+= 1.7.1 =
+* New: A short welcome dialog on the Plugins page after the first activation: allow update emails or skip, then go straight to the settings
+* Improved: "What is shared?" in the dialog lists exactly what the optional opt-in sends
+* Changed: Plugin author is now softiconai
+
 = 1.7.0 =
 * New: Related posts stay in the current language on WPML and Polylang sites
 * New: "Free vs Pro" page with a searchable feature table, and a "Pricing" page with plans and FAQ
@@ -302,6 +307,9 @@ Yes. All text can be translated, and a translation template is included in the `
 
 
 == Upgrade Notice ==
+
+= 1.7.1 =
+A simpler first-run welcome dialog on the Plugins page. No changes to how related posts look on your site.
 
 = 1.7.0 =
 WPML and Polylang support, Free vs Pro and Pricing pages, and new developer hooks. An optional opt-in screen appears once; you can skip it.
