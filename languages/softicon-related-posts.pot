@@ -2,14 +2,14 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: SoftIcon Related Posts – Similar Posts & Internal Linking 1.7.1\n"
+"Project-Id-Version: SoftIcon Related Posts – Similar Posts & Internal Linking 1.7.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/softicon-related-posts\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-16T14:08:26+00:00\n"
+"POT-Creation-Date: 2026-10-24T14:16:28+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: softicon-related-posts\n"
@@ -225,76 +225,6 @@ msgstr ""
 
 #: includes/help_page.php:76
 msgid "Enjoying it? Leave a review"
-msgstr ""
-
-#: includes/onboarding.php:61
-msgid "Sorry, you are not allowed to do that."
-msgstr ""
-
-#: includes/onboarding.php:118
-msgid "Never miss an important update"
-msgstr ""
-
-#: includes/onboarding.php:119
-msgid "Get emails about security fixes, new features and special offers for SoftIcon Related Posts, and share a few basic details about your site so we can keep the plugin compatible and make it better. Your posts and content are never shared."
-msgstr ""
-
-#: includes/onboarding.php:124
-msgid "Connecting…"
-msgstr ""
-
-#: includes/onboarding.php:124
-msgid "Allow & Continue"
-msgstr ""
-
-#: includes/onboarding.php:126
-msgid "What is shared?"
-msgstr ""
-
-#: includes/onboarding.php:128
-msgid "Skip"
-msgstr ""
-
-#: includes/onboarding.php:134
-msgid "Your profile:"
-msgstr ""
-
-#: includes/onboarding.php:134
-msgid "name and email address"
-msgstr ""
-
-#: includes/onboarding.php:135
-msgid "Your site:"
-msgstr ""
-
-#: includes/onboarding.php:135
-msgid "homepage URL and title, WordPress and PHP versions, site language"
-msgstr ""
-
-#: includes/onboarding.php:136
-msgid "This plugin:"
-msgstr ""
-
-#: includes/onboarding.php:136
-msgid "its version, and whether it is active or uninstalled"
-msgstr ""
-
-#: includes/onboarding.php:137
-msgid "Plugins and themes:"
-msgstr ""
-
-#: includes/onboarding.php:137
-msgid "names, versions and whether they are active, to spot conflicts"
-msgstr ""
-
-#. translators: %s: link to the Freemius privacy policy
-#: includes/onboarding.php:143
-#, php-format
-msgid "The data is handled by Freemius, see their %s. Skip and nothing is sent; the plugin works the same either way."
-msgstr ""
-
-#: includes/onboarding.php:144
-msgid "privacy policy"
 msgstr ""
 
 #: includes/post_meta_box.php:37

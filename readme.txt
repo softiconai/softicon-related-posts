@@ -4,7 +4,7 @@ Tags: related posts, similar posts, internal links, related content, gutenberg
 Requires at least: 6.3
 Tested up to: 7.1
 Requires PHP: 7.1
-Stable tag: 1.7.1
+Stable tag: 1.7.2
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -230,6 +230,10 @@ Yes. All text can be translated, and a translation template is included in the `
 
 == Changelog ==
 
+= 1.7.2 =
+* Changed: After activation the standard opt-in screen opens (Allow & Continue or Skip) instead of the dialog on the Plugins page
+* Improved: The "Opt In" link under the plugin on the Plugins page opens the same screen later
+
 = 1.7.1 =
 * New: A short welcome dialog on the Plugins page after the first activation: allow update emails or skip, then go straight to the settings
 * Improved: "What is shared?" in the dialog lists exactly what the optional opt-in sends
@@ -307,6 +311,9 @@ Yes. All text can be translated, and a translation template is included in the `
 
 
 == Upgrade Notice ==
+
+= 1.7.2 =
+The optional opt-in now uses the standard full-page screen. No changes to how related posts look on your site.
 
 = 1.7.1 =
 A simpler first-run welcome dialog on the Plugins page. No changes to how related posts look on your site.
